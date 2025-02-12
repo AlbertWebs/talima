@@ -153,6 +153,7 @@ h5,
 h6 {
   margin: 0px;
   font-family: Papyrus, fantasy !important;
+  /* font-family: 'Nunito'; */
   font-weight: 800 !important;
 }
 
@@ -184,6 +185,7 @@ body {
   overflow-x: hidden;
   /* font-family: "Poppins", Helvetica, sans-serif; */
   font-family: 'Hanken Grotesk';
+  /* font-family: 'Nunito'; */
 }
 
 /*====== Extra CSS ======*/
@@ -768,7 +770,7 @@ button {
 .preloader .pre-box {
   width: 50px;
   height: 50px;
-  background: #f4b941;
+  background: #764c29;
   -webkit-animation: loaderAnimate 0.5s linear infinite;
   animation: loaderAnimate 0.5s linear infinite;
   position: absolute;
@@ -849,7 +851,7 @@ button {
 .back-to-top {
   background-color: #f4b941;
   border-radius: 50%;
-  bottom: 30px;
+  bottom: 100px;
   color: #fff;
   cursor: pointer;
   display: none;
@@ -940,6 +942,10 @@ button {
           margin-inline-end: 25px;
 }
 
+.header-navigation{
+    /* background: linear-gradient(to bottom, #ffffff 9%, #764c29 100%); */
+}
+
 /* Header Navigation CSS */
 .header-navigation .nav-overlay {
   position: fixed;
@@ -970,7 +976,7 @@ button {
           align-items: center;
 }
 .header-navigation .site-branding {
-  max-width: 200px;
+  max-width: 250px;
   -webkit-box-flex: 3;
       -ms-flex-positive: 3;
           flex-grow: 3;
@@ -1257,7 +1263,7 @@ button {
 /* Default Navigation */
 .default-navigation {
   background-color: #fff;
-  padding: 15px 0;
+  padding: 8px 0;
 }
 
 /* Navigation Two */
@@ -5127,7 +5133,7 @@ form.contact-form textarea.form_control {
       background-repeat: no-repeat;
       background-position: 0 0;
     /*border color, change middle color*/
-      background-image: conic-gradient(rgba(0,0,0,0), #f4b941, rgba(0,0,0,0) 25%);
+      background-image: conic-gradient(rgba(0,0,0,0), #f57c21, rgba(0,0,0,0) 25%);
     /* change speed here */
       animation: rotate 4s linear infinite;
   }
@@ -5215,6 +5221,8 @@ form.contact-form textarea.form_control {
     }
   }
 
+
+
   .header-two-wrapper {
     display: flex;
     align-items: center;
@@ -5258,9 +5266,28 @@ form.contact-form textarea.form_control {
   .header-two-main-wrapper .rts-btn.btn-primary {
     padding: 13px 28px;
   }
+  .playful-font{
+    font-family: Papyrus, fantasy !important;
+  }
   @media only screen and (max-width: 479px) {
     .header-two-main-wrapper .rts-btn.btn-primary {
       display: none;
     }
   }
 
+  @media only screen and (max-width: 967px) {
+    .header-top{
+        display: none;
+    }
+}
+
+.thumb{
+    /* border:6px solid #000000; */
+}
+.border {
+    border-image: linear-gradient(to right, #ffffff 0%, #ffff00 100%) 1;
+    border-radius: 5px; /* this doesn't work */
+    border-width: 4px;
+    border-style: solid;
+    padding: 5px;
+  }

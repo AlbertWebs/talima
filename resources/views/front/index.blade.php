@@ -82,7 +82,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                 <!--====== Features Thumb Item ======-->
                 <div class="features-thumb-item mb-40 wow fadeInUp">
-                    <div class="thumb">
+                    <div class="thumb border">
                         <img src="{{asset('theme/assets/images/features/f-1.jpg')}}" alt="Features image">
                     </div>
                     <div class="text mt-25">

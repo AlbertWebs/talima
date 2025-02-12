@@ -35,9 +35,25 @@
         <!--====== Style css ======-->
         <link rel="stylesheet" href="{{asset('theme/assets/css/style.css')}}">
         <link href='https://fonts.googleapis.com/css?family=Hanken Grotesk' rel='stylesheet'>
+         <!--Floating WhatsApp css-->
+        <link rel="stylesheet" href="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.css">
 
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/67aca0b43a842732607dd13b/1ijt57gcg';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
     </head>
     <body>
+        <div style="z-index:100000;" id="WAButton"></div>
         <!--====== Start Preloader ======-->
         <div class="preloader">
             <div class="loader">
@@ -103,13 +119,13 @@
                     <div class="primary-menu">
                         <!--=== Site Branding ===-->
                         <div class="site-branding">
-                            <a href="{{url('/')}}" class="brand-logo"><img src="{{asset('theme/assets/images/logo/logo-black.png')}}" alt="Site Logo"></a>
+                            <a href="{{url('/')}}" class="brand-logo"><img src="{{asset('uploads/logo/logo.png')}}" alt="Site Logo"></a>
                         </div>
                         <!--=== Nav Inner Menu ===-->
                         <div class="nav-menu">
                             <!--=== Mobile Logo ===-->
                             <div class="mobile-logo mb-30 d-block d-xl-none text-center">
-                                <a href="{{url('/')}}" class="brand-logo"><img src="{{asset('theme/assets/images/logo/logo-black.png')}}" alt="Site Logo"></a>
+                                <a href="{{url('/')}}" class="brand-logo"><img src="{{asset('uploads/logo/logo.png')}}" alt="Site Logo"></a>
                             </div>
                             <!--=== Nav Search ===-->
                             <div class="nav-search mb-30 d-block d-xl-none ">
@@ -207,11 +223,8 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="footer-widget about-company-widget mb-40 wow fadeInDown">
-                                <a href="{{url('/')}}" class="footer-logo"><img src="{{asset('theme/assets/images/logo/logo-white.png')}}" alt="Brand Logo"></a>
-                                <p>Sit amet consectetur adipiscinelit
-                                    Sem et aliquam enimdeassa ornare
-                                    vulputate neque feugiat secursun
-                                    blandit volutpat hendr mauris</p>
+                                <a href="{{url('/')}}" class="footer-logo"><img src="{{asset('uploads/logo/logo-white.png')}}" alt="Brand Logo"></a>
+                                <p>"Your gateway to safaris, hiking, hotel bookings, airport transfers, and more. Travel made easy!"</p>
                                 <ul class="social-link">
                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -226,30 +239,31 @@
                                 <h4 class="widget-title">Services</h4>
                                 <div class="footer-nav-content">
                                     <ul class="footer-nav">
-                                        <li><a href="#">Caravan Soler Tent</a></li>
-                                        <li><a href="#">Family Tent Camping</a></li>
-                                        <li><a href="#">Classic Tent Camping</a></li>
-                                        <li><a href="#">Wild Tent Camping</a></li>
-                                        <li><a href="#">Bell Glamp One</a></li>
+                                        <li><a href="#">Safaris & Hiking</a></li>
+                                        <li><a href="#">Hotel Reservations</a></li>
+                                        <li><a href="#">Holiday Bookings</a></li>
+                                        <li><a href="#">Airport Transfers</a></li>
+                                        <li><a href="#">Transport Services</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-4 col-md-6">
+                        <div class="col-xl-3 col-lg-4 col-md-6">
                             <div class="footer-widget footer-nav-widget pl-lg-70 mb-40 wow fadeInUp">
-                                <h4 class="widget-title">Support</h4>
+                                <h4 class="widget-title">Quick Links</h4>
                                 <div class="footer-nav-content">
                                     <ul class="footer-nav">
-                                        <li><a href="#">Meet Our Team</a></li>
-                                        <li><a href="#">Item Support</a></li>
-                                        <li><a href="#">Contact Foram</a></li>
-                                        <li><a href="#">Report Abuse</a></li>
-                                        <li><a href="#">Live</a></li>
+                                        <li><a href="{{route('terms-and-conditions')}}">Terms & Conditions</a></li>
+                                        <li><a href="{{route('privacy-policy')}}">Privacy Policy</a></li>
+                                        <li><a href="{{route('photo-credits')}}">Photo Credits</a></li>
+                                        <li><a href="{{route('contact-us')}}">Contact Us</a></li>
+                                        <li><a href="#">Sitemaps</a></li>
+
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-5 col-lg-4 col-md-6">
+                        <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="footer-widget contact-info-widget pl-lg-100 mb-40 wow fadeInDown">
                                 <div class="contact-info-box mb-35">
                                     <h4 class="title">Location</h4>
@@ -266,17 +280,10 @@
                 </div>
                 <!--=== Copyright Area ===-->
                 <div class="copyright-area">
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <div class="copyright-text">
-                                <P>Copyright &copy; {{date('Y')}} <span style="color:#F7921E;">Talima Africa Adventures</span> All Rights Reserved | Powered By <a href="https://designekta.com">Designekta Studios</a></P>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="copyright-nav float-lg-end">
-                                <ul>
-                                    <li><a href="#">Sitemaps</a></li>
-                                </ul>
+                    <div class="row" >
+                        <div class="col-lg-12">
+                            <div class="copyright-text"  style="text-align:center">
+                                <P>Copyright &copy; {{date('Y')}} <span style="color:#F7921E;">Talima Africa Adventures</span> All Rights Reserved | Powered By <a class="playful-font" href="https://designekta.com">Designekta Studios</a></P>
                             </div>
                         </div>
                     </div>
@@ -311,5 +318,24 @@
         <script src="{{asset('theme/assets/vendor/wow.min.js')}}"></script>
         <!--====== Main js ======-->
         <script src="{{asset('theme/assets/js/theme.js')}}"></script>
+        <!--Floating WhatsApp javascript-->
+	  <script type="text/javascript" src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.js"></script>
+
+	  <script type="text/javascript">
+		  $(function () {
+			  $('#WAButton').floatingWhatsApp({
+				  phone: '+254708284492', //WhatsApp Business phone number
+				  headerTitle: 'Chat with us on WhatsApp!', //Popup Title
+				  popupMessage: 'Hello, how can we help you?', //Popup Message
+				  showPopup: true, //Enables popup display
+				  buttonImage: '<img  src="{{url('/')}}/uploads/icon/whatsapp.svg" />', //Button Image
+				  //headerColor: 'crimson', //Custom header color
+				  //backgroundColor: 'crimson', //Custom background button color
+				  position: "right" //Position: left | right
+
+			  });
+		  });
+	  </script>
+
     </body>
 </html>
