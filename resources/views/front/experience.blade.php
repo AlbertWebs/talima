@@ -1,4 +1,4 @@
-@extends('front.master')
+@extends('front.master-experience')
 
 @section('content')
     @foreach ($Experiences as $experiences)
@@ -6,14 +6,38 @@
 
         <!--====== Start Accommodation Details section ======-->
         <section class="accommodation-details-section">
-            <div class="container-fluid">
-                <div class="service-image-wrapper">
-                    <div class="row">
-                        <div class="col-lg-6 mb-40">
-                            <img src="{{$experiences->image_one}}" alt="service image">
+            <div class="container-fluid pb-100">
+                <div class="service-slider-one wow fadeInUp"  >
+                    <div class="single-service-item-four">
+                        <div class="img-holder" id="animated-thumbnails-gallery">
+                            <a href="{{$experiences->image_one}}" class="gallery-item" data-src="{{$experiences->image_one}}">
+                               <img src="{{$experiences->image_one}}" alt="Service Image">
+                            </a>
                         </div>
-                        <div class="col-lg-6 mb-40">
-                            <img src="{{$experiences->image_one}}" alt="service image">
+                    </div>
+                    <div class="single-service-item-four">
+                        <div class="img-holder">
+                            <img src="{{$experiences->image_two}}" alt="Service Image">
+                        </div>
+                    </div>
+                    <div class="single-service-item-four">
+                        <div class="img-holder">
+                            <img src="{{$experiences->image_three}}" alt="Service Image">
+                        </div>
+                    </div>
+                    <div class="single-service-item-four">
+                        <div class="img-holder">
+                            <img src="{{$experiences->image_four}}" alt="Service Image">
+                        </div>
+                    </div>
+                    <div class="single-service-item-four">
+                        <div class="img-holder">
+                            <img src="{{$experiences->image_five}}" alt="Service Image">
+                        </div>
+                    </div>
+                    <div class="single-service-item-four">
+                        <div class="img-holder">
+                            <img src="{{$experiences->image_six}}" alt="Service Image">
                         </div>
                     </div>
                 </div>
@@ -90,83 +114,41 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-12">
                         <div class="section-title text-center mb-50">
-                            <h2>Amazing Camping For <span class="thin">Real Adventure</span></h2>
+                            <h2>Related  <span class="thin">Packages</span></h2>
                         </div>
                     </div>
                 </div>
                 <div class="service-slider-one">
+                    <?php
+                       $Related = DB::table('experiences')->where('cat',$experiences->cat)->get()
+                    ?>
+                    @foreach ($Related as $category)
                     <div class="single-service-item mb-30">
-                        <div class="img-holder">
-                            <img src="assets/images/service/service-1.jpg" alt="Service image">
-                            <div class="shape"></div>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="accommodation-details.html">Classic Tent</a></h3>
-                            <P>Sit amet consectetur adipisc fermentumat
-                                tellusaliquam arcu uturnacon sequat</P>
-                            <div class="meta">
-                                <a href="#" class="icon"><i class="flaticon-bedding"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-cat"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-tent-3"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-campfire"></i></a>
-                                <a href="accommodation-details.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                        <div class="col-lg-12 col-md-6 col-sm-12">
+                            <div class="gallery-item">
+                                <div class="gallery-img border">
+                                    <img class="tour-img" src="{{$category->image_one}}" alt="Gallery Image">
+                                        {{-- <a href="gallery.html" class="icon-btn"><i class="far fa-arrow-right"></i></a> --}}
+                                        <div class="ova_foot_product">
+                                            <div class="ova-product-day-title-location">
+                                               <div class="ova-tour-day">
+                                                  <i aria-hidden="true" class="icomoon icomoon-clock"></i>
+                                                  {{$category->duration}}
+                                               </div>
+                                               <p class="ova-product-title">
+                                                  <a href="{{route('experience', $category->slung)}}"><u>{{$category->title}}</u></a>
+                                               </p>
+                                               <div class="ova-product-location">
+                                                  <i aria-hidden="true" class="icomoon icomoon-location"></i>
+                                                  <small class="location">{{$category->location}}</small>
+                                               </div>
+                                            </div>
+                                         </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="single-service-item mb-30">
-                        <div class="img-holder">
-                            <img src="assets/images/service/service-2.jpg" alt="Service image">
-                            <div class="shape"></div>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="accommodation-details.html">Forest Camping</a></h3>
-                            <P>Sit amet consectetur adipisc fermentumat
-                                tellusaliquam arcu uturnacon sequat</P>
-                            <div class="meta">
-                                <a href="#" class="icon"><i class="flaticon-bedding"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-cat"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-tent-3"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-campfire"></i></a>
-                                <a href="accommodation-details.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-service-item mb-30">
-                        <div class="img-holder">
-                            <img src="assets/images/service/service-3.jpg" alt="Service image">
-                            <div class="shape"></div>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="accommodation-details.html">Small Trailer</a></h3>
-                            <P>Sit amet consectetur adipisc fermentumat
-                                tellusaliquam arcu uturnacon sequat</P>
-                            <div class="meta">
-                                <a href="#" class="icon"><i class="flaticon-bedding"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-cat"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-tent-3"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-campfire"></i></a>
-                                <a href="accommodation-details.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-service-item mb-30">
-                        <div class="img-holder">
-                            <img src="assets/images/service/service-7.jpg" alt="Service image">
-                            <div class="shape"></div>
-                        </div>
-                        <div class="text">
-                            <h3 class="title"><a href="accommodation-details.html">Camper</a></h3>
-                            <P>Sit amet consectetur adipisc fermentumat
-                                tellusaliquam arcu uturnacon sequat</P>
-                            <div class="meta">
-                                <a href="#" class="icon"><i class="flaticon-bedding"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-cat"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-tent-3"></i></a>
-                                <a href="#" class="icon"><i class="flaticon-campfire"></i></a>
-                                <a href="accommodation-details.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section><!--====== End Service section ======-->

@@ -425,6 +425,7 @@
         });
     }
 
+
     //======= Item Active
     if ($('#who-we-wrapper').length) {
         $('.who-we-wrapper').on('mouseover', '.fancy-icon-box', function() {
