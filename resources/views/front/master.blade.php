@@ -142,34 +142,25 @@
                                     <li class="menu-item"><a href="{{url('/')}}">Home</a>
 
                                     </li>
-                                    <li class="menu-item has-children"><a href="accommodation-grid.html">Domestic</a>
+                                    <?php
+                                      $Category = DB::table('category')->limit('4')->get();
+                                    ?>
+                                    @foreach ($Category as $categories)
+                                    <li class="menu-item has-children"><a href="{{route('tour-category', $categories->slung)}}">{{$categories->cat}}</a>
+                                        <?php
+                                            $Subcategory = DB::table('sub_categories')->where('category_id', $categories->id)->limit('6')->get();
+                                        ?>
                                         <ul class="sub-menu">
-                                            <li><a href="accommodation-grid.html">ACD Grid</a></li>
-                                            <li><a href="accommodation-standard.html">ACD Standard</a></li>
-                                            <li><a href="accommodation-slider.html">ACD Slider</a></li>
-                                            <li><a href="accommodation-details.html">ACD Details</a></li>
+                                            @foreach ($Subcategory as $SubCat)
+                                            <li><a href="{{route('tour-subcategories', ['category-slung' => $categories->slung, 'subcatgory-slung'=> $SubCat->slung])}}">{{$SubCat->title}}</a></li>
+                                            @endforeach
+                                            <hr>
+                                            <li><a href="{{route('tour-category', ['slung' => $categories->slung])}}">All {{$categories->cat}}</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item has-children"><a href="blog-standard.html">Handpicked Deals</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-standard.html">Blog Standard</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item has-children"><a href="about.html">Safaris</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="gallery.html">Our Gallery</a></li>
-                                            <li><a href="faq.html">Faq</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item has-children"><a href="about.html">International</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="gallery.html">Our Gallery</a></li>
-                                            <li><a href="faq.html">Faq</a></li>
-                                        </ul>
-                                    </li>
+                                    @endforeach
+
+
                                     <li class="menu-item"><a href="{{url('/contact-us')}}">Contact</a></li>
                                     {{-- <li class="menu-item"><a class="search-btn" href="#" data-bs-toggle="modal" data-bs-target="#search-modal"><i class="far fa-search"></i></a></li> --}}
                                 </ul>

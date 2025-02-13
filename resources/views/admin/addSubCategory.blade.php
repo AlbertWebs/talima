@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="wrap" >
-        
+
 
         <!-- HEADER SECTION -->
         @include('admin.top')
@@ -18,11 +18,11 @@
 
         <!--PAGE CONTENT -->
         <div id="content">
-             
+
             <div class="inner" style="min-height: 700px;">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1> Add Sub Category </h1>
+                    <div class="col-lg-12 text-center">
+                        <h2> Add Sub Category </h2>
                     </div>
                 </div>
                   <hr />
@@ -37,13 +37,13 @@
                   <!--END BLOCK SECTION -->
                 <hr />
                    <!-- CHART & CHAT  SECTION -->
-              
+
                  <!--END CHAT & CHAT SECTION -->
-               
+
                   <!-- Inner Content Here -->
-                 
+
             <div class="inner">
-                
+
 
               <div class="row">
                <center>
@@ -55,28 +55,28 @@
 							   <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
 				@endif
                  </center>
-                 
+
 
                  <form class="form-horizontal" method="post"  action="{{url('/admin/add_SubCategory')}}" enctype="multipart/form-data">
-                    
+
                  <div class="form-group">
                         <label for="text1" class="control-label col-lg-4">Sub Cateory Name</label>
 
                         <div class="col-lg-8">
-                            <input type="text" id="text1" name="name" value="" placeholder="e.g Python Programming " class="form-control" />
+                            <input type="text" id="text1" name="title" value="" placeholder="e.g Some Title " class="form-control" />
                         </div>
                     </div>
 
-          
+
                   <div class="form-group">
                     <label class="control-label col-lg-4">Parent Category</label>
 
-                    
-                        
+
+
 
                     <div class="col-lg-8">
-                        <select name="cat_id" data-placeholder="Choose a Country" class="form-control chzn-select" tabindex="2">
-                          
+                        <select name="category_id" data-placeholder="Choose a Country" class="form-control chzn-select" tabindex="2">
+
                            <?php $TheCategoryList = DB::table('category')->get(); ?>
                            @foreach($TheCategoryList as $value)
                               <option value="{{$value->id}}">{{$value->cat}}</option>
@@ -86,16 +86,16 @@
                     </div>
                     </div>
 
-                   
-                   
+
+
                     <br><br>
                     <div class="col-lg-12 text-center">
                       <button type="submit" class="btn btn-success"><i class="icon-plus icon-white"></i> Add Sub Category</button>
                     </div>
-                    
-                    
+
+
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    
+
                 <form>
               </div>
 
@@ -104,7 +104,7 @@
 
 
 
-                
+
             </div>
 
         </div>

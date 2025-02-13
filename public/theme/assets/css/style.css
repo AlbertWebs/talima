@@ -5373,3 +5373,10 @@ form.contact-form textarea.form_control {
 .ova-product-location{
     padding: 10px;
 }
+.ova-product-locations{
+    padding-left: 10px;
+}
+.tour-img{
+    min-height:400px;
+    object-fit: cover;
+}

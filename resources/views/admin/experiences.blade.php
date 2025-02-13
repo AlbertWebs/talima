@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="wrap" >
-        
+
 
         <!-- HEADER SECTION -->
         @include('admin.top')
@@ -18,7 +18,7 @@
 
         <!--PAGE CONTENT -->
         <div id="content">
-             
+
             <div class="inner" style="min-height: 700px;">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -36,7 +36,7 @@
                 </div>
                   <!--END BLOCK SECTION -->
                 <hr />
-                 
+
                  <!-- COMMENT AND NOTIFICATION  SECTION -->
                    <div class="row">
                         <div class="col-lg-12">
@@ -51,11 +51,11 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Name</th>
-                                                   
+
                                                     <th>Image</th>
                                                     <th>Edit</th>
                                                     <th>Delete</th>
-                                                    
+
                                                 </tr>
                                             </thead>
                                             <tbody class="text-center">
@@ -69,45 +69,44 @@
                                                     @foreach($Category as $cat)
                                                     Category : {{$cat->cat}} <br>
                                                     @endforeach
-                                                    
+
                                                     </td>
-                                                    
-                                                    
-                                                    <td class="center"><img width="200" height="200" src="{{url('/')}}/uploads/experiences/{{$value->image_one}}"></td>
+
+
+                                                    <td class="center"><img width="200"  src="{{$value->image_one}}"></td>
                                                     <td class="center"><a href="{{url('/admin')}}/editExperience/{{$value->id}}"   class="btn btn-info"><i class="icon-pencil icon-white"></i> Edit</a>
                                                      @if($value->status == 0)
                                                          <br><hr><br><a href="{{url('/admin')}}/swapExperience/{{$value->id}}"   class="btn btn-success"><i class="icon-check icon-white"></i> Publish</a>
                                                      @else
-                                                          <br><hr><br><a href="{{url('/admin')}}/swapExperience/{{$value->id}}"   class="btn btn-danger"><i class="icon-frawn icon-white"></i> Unpublish</a>
-                                                     @endif'
+                                                          <br><hr><a href="{{url('/admin')}}/swapExperience/{{$value->id}}"   class="btn btn-danger"><i class="icon-frawn icon-white"></i> Unpublish</a>
+                                                     @endif
 
                                                      @if($value->beach_holidays == 1)
-                                                         <br><hr><br><a href="{{url('/admin')}}/swapBeach/{{$value->id}}"   class="btn btn-success"><i class="icon-check icon-white"></i> Beach Holiday</a>
-                                                     @else
-                                                          <br><hr><br><a href="{{url('/admin')}}/swapBeach/{{$value->id}}"   class="btn btn-danger"><i class="icon-white"></i> Beach Holiday Disabled</a>
+                                                         <br><hr><a href="{{url('/admin')}}/swapBeach/{{$value->id}}"   class="btn btn-success"><i class="icon-check icon-white"></i> Beach Holiday</a>
                                                      @endif
-                                                     
+
+
                                                     </td>
-                                                    
+
                                                     <td class="center"><a onclick="return confirm('Do you want to delete this Destination?')" href="{{url('/admin')}}/deleteExperience/{{$value->id}}"   class="btn btn-danger"><i class="icon-trash icon-white"></i> Del</a></td>
-                                                  
+
                                                 </tr>
                                             @endforeach
-                                                
+
                                             </tbody>
                                         </table>
                                     </div>
-                                
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 <!-- END COMMENT AND NOTIFICATION  SECTION -->
-                
 
 
 
-                
+
+
             </div>
 
         </div>

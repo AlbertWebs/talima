@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -44,6 +45,17 @@ class HomeController extends Controller
     public function book()
     {
         return view('front.booking');
+    }
+
+    public function category($slung){
+        $Category = DB::table('category')->where('slung',$slung)->first();
+        $Experiences = DB::table('experiences')->where('cat',$Category->id)->get();
+        return view('front.category', compact('Experiences'));
+    }
+
+    public function experience($slung){
+        $Experiences = DB::table('experiences')->where('slung',$slung)->get();
+        return view('front.experience', compact('Experiences'));
     }
 
 

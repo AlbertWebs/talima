@@ -34,7 +34,7 @@
 
     @if($page_title=='form')
     <!-- PAGE LEVEL STYLES -->
-        
+
     <link href="{{asset('admins_theme/assets/css/jquery-ui.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('admins_theme/assets/plugins/uniform/themes/default/css/uniform.default.css')}}" />
     <link rel="stylesheet" href="{{asset('admins_theme/assets/plugins/inputlimiter/jquery.inputlimiter.1.0.css')}}" />
@@ -45,13 +45,13 @@
     <link rel="stylesheet" href="{{asset('admins_theme/assets/plugins/datepicker/css/datepicker.css')}}" />
     <link rel="stylesheet" href="{{asset('admins_theme/assets/plugins/timepicker/css/bootstrap-timepicker.min.css')}}" />
     <link rel="stylesheet" href="{{asset('admins_theme/assets/plugins/switch/static/stylesheets/bootstrap-switch.css')}}" />
-   
+
     <!-- END PAGE LEVEL  STYLES -->
     @endif
 
     @if($page_title=='formfile')
     <!-- PAGE LEVEL STYLES -->
-        
+
     <link href="{{asset('admins_theme/assets/css/jquery-ui.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('admins_theme/assets/plugins/uniform/themes/default/css/uniform.default.css')}}" />
     <link rel="stylesheet" href="{{asset('admins_theme/assets/plugins/inputlimiter/jquery.inputlimiter.1.0.css')}}" />
@@ -68,7 +68,7 @@
 
     @if($page_title=='formfiletext')
     <!-- PAGE LEVEL STYLES -->
-        
+
     <link href="{{asset('admins_theme/assets/css/jquery-ui.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('admins_theme/assets/plugins/uniform/themes/default/css/uniform.default.css')}}" />
     <link rel="stylesheet" href="{{asset('admins_theme/assets/plugins/inputlimiter/jquery.inputlimiter.1.0.css')}}" />
@@ -97,7 +97,7 @@
     @endif
     @if($page_title=='Error')
     <link rel="stylesheet" href="{{asset('admins_theme/assets/assets/css/error.css')}}" />
-    <link rel="stylesheet" href="{{asset('admins_theme/assets/assets/plugins/magic/magic.css')}}" />   
+    <link rel="stylesheet" href="{{asset('admins_theme/assets/assets/plugins/magic/magic.css')}}" />
     @endif
 
     @if($page_title=='Gallery')
@@ -117,12 +117,12 @@
     <!-- PAGE LEVEL STYLES -->
     <link href="{{asset('admins_theme/assets/plugins/jquery-steps-master/demo/css/normalize.css')}}" rel="stylesheet" />
     <link href="{{asset('admins_theme/assets/plugins/jquery-steps-master/demo/css/wizardMain.css')}}" rel="stylesheet" />
-    <link href="{{asset('admins_theme/assets/plugins/jquery-steps-master/demo/css/jquery.steps.css')}}" rel="stylesheet" />    
+    <link href="{{asset('admins_theme/assets/plugins/jquery-steps-master/demo/css/jquery.steps.css')}}" rel="stylesheet" />
     <!-- END PAGE LEVEL  STYLES -->
     @endif
 
      @if($page_title=='pricing')
-  
+
      @endif
      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -137,7 +137,7 @@
 <body class="padTop53 " >
 
     <!-- MAIN WRAPPER -->
-   
+
     <!-- Contents -->
     @yield('content')
     <!-- Contents Ends Here -->
@@ -199,7 +199,7 @@
         <script>
             $(function () { formInit(); });
         </script>
-        
+
      <!--END PAGE LEVEL SCRIPT-->
     @endif
 
@@ -220,12 +220,12 @@
     <script src="{{asset('admins_theme/assets/plugins/jquery.dualListbox-1.3/jquery.dualListBox-1.3.min.js')}}"></script>
     <script src="{{asset('admins_theme/assets/plugins/autosize/jquery.autosize.min.js')}}"></script>
     <script src="{{asset('admins_theme/assets/plugins/jasny/js/bootstrap-inputmask.js')}}"></script>
-    <script src="{{asset('admins_theme/assets/plugins/jasny/js/bootstrap-fileupload.js')}}"></script>   
+    <script src="{{asset('admins_theme/assets/plugins/jasny/js/bootstrap-fileupload.js')}}"></script>
     <script src="{{asset('admins_theme/assets/js/formsInit.js')}}"></script>
         <script>
             $(function () { formInit(); });
         </script>
-        
+
      <!--END PAGE LEVEL SCRIPT-->
     @endif
 
@@ -246,12 +246,12 @@
     <script src="{{asset('admins_theme/assets/plugins/jquery.dualListbox-1.3/jquery.dualListBox-1.3.min.js')}}"></script>
     <script src="{{asset('admins_theme/assets/plugins/autosize/jquery.autosize.min.js')}}"></script>
     <script src="{{asset('admins_theme/assets/plugins/jasny/js/bootstrap-inputmask.js')}}"></script>
-    <script src="{{asset('admins_theme/assets/plugins/jasny/js/bootstrap-fileupload.js')}}"></script>   
+    <script src="{{asset('admins_theme/assets/plugins/jasny/js/bootstrap-fileupload.js')}}"></script>
     <script src="{{asset('admins_theme/assets/js/formsInit.js')}}"></script>
         <script>
             $(function () { formInit(); });
         </script>
-        
+
      <!--END PAGE LEVEL SCRIPT-->
       <!-- PAGE LEVEL SCRIPTS -->
     <script src="{{asset('admins_theme/assets/plugins/wysihtml5/lib/js/wysihtml5-0.3.0.min.js')}}"></script>
@@ -271,18 +271,18 @@
     @if($page_title=='Gallery')
     <!-- PAGE LEVEL SCRIPTS -->
     <script src="{{asset('admins_theme/assets/plugins/jquery.fancybox-1.3.4/jquery-1.4.3.min.js')}}"></script> <!--important for gallery-->
-    <script src="{{asset('admins_theme/assets/plugins/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js')}}"></script> 
+    <script src="{{asset('admins_theme/assets/plugins/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js')}}"></script>
     <script src="{{asset('admins_theme/assets/plugins/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js')}}"></script>
     <script src="{{asset('admins_theme/assets/js/image_gallery.js')}}"></script>
-    
-	
+
+
      <!--END PAGE LEVEL SCRIPTS -->
     @endif
-    
+
     @if($page_title=="Wizard")
     <!-- PAGE LEVEL SCRIPTS -->
     <script src="{{asset('admins_theme/assets/plugins/jquery-steps-master/lib/jquery.cookie-1.3.1.js')}}"></script>
-    <script src="{{asset('admins_theme/assets/plugins/jquery-steps-master/build/jquery.steps.js')}}"></script>   
+    <script src="{{asset('admins_theme/assets/plugins/jquery-steps-master/build/jquery.steps.js')}}"></script>
     <script src="{{asset('admins_theme/assets/js/WizardInit.js')}}"></script>
          <!--END PAGE LEVEL SCRIPTS -->
     @endif
@@ -291,15 +291,17 @@
 <!-- PAGE LEVEL SCRIPTS-->
 
      <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-    
+
     <script src="{{asset('admins_theme/assets/plugins/gmaps/gmaps.js')}}"></script>
     <script src="{{asset('admins_theme/assets/js/mapsInit.js')}}"></script>
     <script>
         $(function () { MapsInit(); });
     </script>
-    
+
  <!--END PAGE LEVEL SCRIPTS-->
     @endif
+
+
 
 
 </body>

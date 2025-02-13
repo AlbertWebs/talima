@@ -2,14 +2,14 @@
 
 @section('content')
 <div id="wrap" >
-        
+
 
         <!-- HEADER SECTION -->
         @include('admin.top')
         <!-- END HEADER SECTION -->
 
 
- 
+
         <!-- MENU SECTION -->
         @include('admin.left')
         <!--END MENU SECTION -->
@@ -18,7 +18,7 @@
 
         <!--PAGE CONTENT -->
         <div id="content">
-             
+
             <div class="inner" style="min-height: 700px;">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -36,12 +36,12 @@
                 </div>
                   <!--END BLOCK SECTION -->
                 <hr />
-                  
-               
+
+
                   <!-- Inner Content Here -->
-                 
+
             <div class="inner">
-                
+
 
               <div class="row">
                <center>
@@ -53,10 +53,10 @@
 							   <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
 				@endif
                  </center>
-                 
+
 
                  <form class="form-horizontal" method="post"  action="{{url('/admin/add_Experience')}}" enctype="multipart/form-data">
-                    
+
                  <div class="form-group">
                         <label for="text1" class="control-label col-lg-4">Destination Title</label>
 
@@ -80,7 +80,7 @@
                             <input type="text" id="text1" name="price" value="USD 0" placeholder="e.g  USD 20 " class="form-control" />
                         </div>
                     </div>
-                    
+
 
                     <div class="form-group">
                         <label for="text1" class="control-label col-lg-4">Duration</label>
@@ -90,55 +90,48 @@
                         </div>
                     </div>
 
+
+
+
+
+
+
+
                     <div class="form-group">
-                        <label for="text1" class="control-label col-lg-4">Date</label>
+                        <label class="control-label col-lg-4">Category</label>
+
+
+
 
                         <div class="col-lg-8">
-                        <input type="date" id="date2" name="date" class="form-control" />
+                            <select name="cat" data-placeholder="Select Category" class="form-control chzn-select" tabindex="2" id="cat">
+
+                            <?php $TheCategoryList = DB::table('category')->get(); ?>
+                            @foreach($TheCategoryList as $value)
+                                <option value="{{$value->id}}">{{$value->cat}}</option>
+                            @endforeach
+
+                            </select>
                         </div>
                     </div>
-                    
-
-                   
 
                     <div class="form-group">
-                    <label class="control-label col-lg-4">Town</label>
+                        <label class="control-label col-lg-4">Sub Category</label>
 
-                    
-                        
 
-                    <div class="col-lg-8">
-                        <select name="town" data-placeholder="Select Guide" class="form-control chzn-select" tabindex="2">
-                          
-                           <?php $TheCategoryList = DB::table('towns')->get(); ?>
-                           @foreach($TheCategoryList as $value)
-                              <option value="{{$value->name}}">{{$value->name}}</option>
-                           @endforeach
-                           <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    </div>
 
-                    <div class="form-group">
-                    <label class="control-label col-lg-4">Category</label>
 
-                    
-                        
+                        <div class="col-lg-8">
+                            <select name="sub_cat" id="sub_cat"  data-placeholder="Choose Sub Category" class="form-control" tabindex="2">
 
-                    <div class="col-lg-8">
-                        <select name="cat" data-placeholder="Select Category" class="form-control chzn-select" tabindex="2">
-                          
-                           <?php $TheCategoryList = DB::table('category')->get(); ?>
-                           @foreach($TheCategoryList as $value)
-                              <option value="{{$value->id}}">{{$value->cat}}</option>
-                           @endforeach
 
-                        </select>
-                    </div>
+
+                            </select>
+                        </div>
                     </div>
 
 
-                    
+
 
                     <div class="form-group">
                         <label for="limiter" class="control-label col-lg-4">Meta Data</label>
@@ -150,8 +143,8 @@
                     </div>
 
 
-                  
-          
+
+
                         <div class="col-lg-12">
                             <div class="box">
                                 <header>
@@ -173,14 +166,14 @@
                                     </ul>
                                 </header>
                                 <div id="div-1" class="body collapse in">
-                                    
+
                                         <textarea name="content" id="wysihtml5" class="form-control" rows="10"></textarea>
 
-                                    
+
                                 </div>
                             </div>
                         </div>
-                   
+
                         <center>
                             <div class="form-group col-lg-12">
                             <div class="form-group col-lg-4">
@@ -266,21 +259,21 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                        
-                        
 
-                            
+
+
+
+
                             </div>
                     </center>
                     <br><br>
                     <div class="col-lg-12 text-center">
                       <button type="submit" class="btn btn-success"><i class="icon-plus icon-white"></i> Add Experience</button>
                     </div>
-                    
-                    
+
+
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    
+
                 <form>
               </div>
 
@@ -289,7 +282,7 @@
 
 
 
-                
+
             </div>
 
         </div>
@@ -300,4 +293,26 @@
          <!-- END RIGHT STRIP  SECTION -->
     </div>
 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (e) {
+            $('#cat').on('change', e => {
+                var val = $('#cat').val();
+                $('#sub_cat').empty()
+                $.ajax({
+                    url: `/admin/get-subcategories/${val}`,
+                    success: function(data){
+                            var toAppend = '';
+                            $.each(data,function(i,o){
+                            toAppend += '<option value="'+o.id+'">'+o.title+'</option>';
+                        });
+                        $('#sub_cat').append(toAppend);
+
+
+                        }
+                })
+            })
+        })
+    </script>
 @endsection
