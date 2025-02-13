@@ -180,7 +180,7 @@ body {
   font-style: normal;
   font-weight: 300;
   color: #000000;
-  font-size: 17px;
+  font-size: 18px;
   /* line-height: 1.6; */
   overflow-x: hidden;
   /* font-family: "Poppins", Helvetica, sans-serif; */
@@ -217,6 +217,10 @@ body {
 .mt-minus-130 {
   margin-top: -130px;
 }
+
+.mt-minus-180 {
+    margin-top: -180px;
+  }
 
 @media only screen and (min-width: 1200px) {
   .plr-5p {
@@ -983,7 +987,7 @@ button {
 }
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   .header-navigation .site-branding {
-    max-width: 150px;
+    max-width: 200px;
   }
 }
 @media (max-width: 767px) {
@@ -2988,8 +2992,8 @@ ul.check-style-two.check-width-50 {
   margin-right: -15px;
 }
 .gallery-slider-two .single-gallery-item-two {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 /* Gallery Item  */
@@ -5285,9 +5289,87 @@ form.contact-form textarea.form_control {
     /* border:6px solid #000000; */
 }
 .border {
-    border-image: linear-gradient(to right, #ffffff 0%, #ffff00 100%) 1;
+    border-image: linear-gradient(to right, #ffffff 0%, #ffff00 100%);
     border-radius: 5px; /* this doesn't work */
     border-width: 4px;
     border-style: solid;
-    padding: 5px;
+    padding: 6px;
   }
+
+  .pulseBtn {
+    background:#764c29;
+    color:#fff;
+    border:2px solid #904d22;
+    padding:1rem 2rem;
+    border-radius:2rem;
+    font-size:1rem;
+    box-shadow: 0 0 0 0 #764c29;
+    -moz-animation: pulse 2s infinite;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 #764c29;
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(88, 120, 243, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 50px rgba(88, 120, 243, 0);
+        }
+    }
+.theme-color{
+    color:#764c29
+}
+
+
+.fullscreen-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/*  */
+.ova_foot_product {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .1) 30%, rgba(0, 0, 0, .7) 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    z-index: 9999999;
+    color:#ffffff;
+
+}
+.ova-product-title{
+    padding: 10px;
+    margin: 0;
+    padding-bottom: 14px;
+    line-height: 1;
+    font-size: 20px;
+    text-transform: capitalize;
+    color:#ffffff;
+}
+.ova-tour-day{
+    padding: 10px;
+}
+.ova-product-location{
+    padding: 10px;
+}

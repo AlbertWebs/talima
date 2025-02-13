@@ -170,19 +170,19 @@
                                             <li><a href="faq.html">Faq</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item"><a href="contact.html">Contact</a></li>
+                                    <li class="menu-item"><a href="{{url('/contact-us')}}">Contact</a></li>
                                     {{-- <li class="menu-item"><a class="search-btn" href="#" data-bs-toggle="modal" data-bs-target="#search-modal"><i class="far fa-search"></i></a></li> --}}
                                 </ul>
                             </nav>
                             <!--=== Nav Button ===-->
                             <div class="menu-button mt-40 d-xl-none">
-                                <a href="contact.html" class="main-btn btn-green">Book now<i class="far fa-angle-double-right"></i></a>
+                                <a href="{{url('/book-us')}}" class="main-btn btn-green">Book now<i class="far fa-angle-double-right"></i></a>
                             </div>
                         </div>
                         <!--=== Nav right Item ===-->
                         <div class="nav-right-item d-flex align-items-center">
                             <div class="menu-button d-xl-block d-none">
-                                <a href="contact.html" class="main-btn btn-green animated-border-box">Book now<i class="far fa-angle-double-right"></i></a>
+                                <a href="{{url('/book-us')}}" class="main-btn btn-green animated-border-box">Book now<i class="far fa-angle-double-right"></i></a>
                             </div>
 
                             <div class="navbar-toggler">

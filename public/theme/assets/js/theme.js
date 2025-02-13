@@ -2,7 +2,7 @@
     Template Name: Vedhak - Adventure Tours and Travel HTML Template
     Template URI: site.com
     Description: Vedhak is a modern Adventure Tours and Travel HTML Template designed for all activities, sports, hiking, or outdoor adventures.
-    Author: WebTend 
+    Author: WebTend
     Author URI: https://webtend.net/
     Version: 1.0
 
@@ -81,7 +81,7 @@
     });
 
 
-    
+
     // Nav Overlay On
     $(".navbar-toggler, .navbar-close,.nav-overlay").on('click', function (e) {
         $(".nav-overlay").toggleClass("active");
@@ -93,11 +93,11 @@
 
 
     //===== Preloader
-    
+
     $(window).on('load', function(event) {
         $('.preloader').delay(500).fadeOut('500');
     })
-    
+
     //===== Sticky
 
     $(window).on('scroll', function(event) {
@@ -123,9 +123,9 @@
             scrollTop: 0,
         }, 1500);
     });
-    
+
     //===== Counter js
-    
+
     if ($('.count').length){
         $('.count').counterUp({
             delay: 100,
@@ -134,7 +134,7 @@
     }
 
     //===== Magnific-popup js
-    
+
     if ($('.video-popup').length){
         $('.video-popup').magnificPopup({
             type: 'iframe',
@@ -146,25 +146,25 @@
     if ($('.img-popup').length){
         $(".img-popup").magnificPopup({
             type: "image",
-             gallery: { 
-              enabled: true 
+             gallery: {
+              enabled: true
             }
         });
     }
-    
+
     //===== Nice select js
     if ($('select').length){
         $('select').niceSelect();
     }
-    
+
     //===== Slick slider js
     $('.hero-slider-one,.hero-slider-two').on('init', function(e, slick) {
         var $firstAnimatingElements = $('div.single-slider:first-child').find('[data-animation]');
-        doAnimations($firstAnimatingElements);    
+        doAnimations($firstAnimatingElements);
     });
     $('.hero-slider-one,.hero-slider-two').on('beforeChange', function(e, slick, currentSlide, nextSlide) {
         var $animatingElements = $('div.single-slider[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
-        doAnimations($animatingElements);    
+        doAnimations($animatingElements);
     });
     function doAnimations(elements) {
         var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -172,7 +172,7 @@
             var $this = $(this);
             var $animationDelay = $this.data('delay');
             var $animationType = 'animated ' + $this.data('animation');
-            $this.css({ 
+            $this.css({
                 'animation-delay': $animationDelay,
                 '-webkit-animation-delay': $animationDelay
             });
@@ -240,7 +240,7 @@
             infinite: true,
             speed: 800,
             autoplay: true,
-            slidesToShow: 3,
+            slidesToShow: 4,
             slidesToScroll: 1,
             prevArrow: '<div class="prev"><i class="far fa-angle-left"></i></div>',
             nextArrow: '<div class="next"><i class="far fa-angle-right"></i></div>',
@@ -273,7 +273,7 @@
             infinite: true,
             speed: 800,
             autoplay: true,
-            slidesToShow: 4,
+            slidesToShow: 5,
             slidesToScroll: 1,
             prevArrow: '<div class="prev"><i class="far fa-angle-left"></i></div>',
             nextArrow: '<div class="next"><i class="far fa-angle-right"></i></div>',
@@ -304,10 +304,14 @@
             dots: false,
             arrows: false,
             infinite: true,
-            speed: 800,
+            speed: 8000,
             autoplay: true,
-            slidesToShow: 4,
+            autoplaySpeed:0,
+            slidesToShow: 5,
             slidesToScroll: 1,
+            autoplayTimeout:1000,
+            autoplayHoverPause:true,
+            cssEase: 'linear',
             prevArrow: '<div class="prev"><i class="far fa-angle-left"></i></div>',
             nextArrow: '<div class="next"><i class="far fa-angle-right"></i></div>',
             responsive: [
@@ -332,6 +336,7 @@
             ]
         });
     }
+
     if ($('.testimonial-slider-one').length) {
         var sliderDots = $('.testimonial-dots');
         var sliderArrows = $('.testimonial-arrows');
@@ -419,7 +424,7 @@
             ]
         });
     }
-    
+
     //======= Item Active
     if ($('#who-we-wrapper').length) {
         $('.who-we-wrapper').on('mouseover', '.fancy-icon-box', function() {
@@ -451,7 +456,7 @@
             });
         });
     }
-    
+
     if ($('.calendar-container').length) {
         $('.calendar-container').calendar({
             date:new Date(),
@@ -467,7 +472,7 @@
     });
 
     //===== Wow js
-    
+
     new WOW().init();
 
 })(window.jQuery);
