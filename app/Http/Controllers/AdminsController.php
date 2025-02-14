@@ -31,6 +31,8 @@ use App\Models;
 
 use App\Models\Extra;
 
+use App\Models\Deal;
+
 use App\Transfer;
 
 use App\Privacy;
@@ -3667,6 +3669,14 @@ public function addExperience(){
     return view('admin.addExperience',compact('page_title','page_name'));
 }
 
+public function addDeals(){
+    $page_title = 'formfiletext';//For Layout Inheritance
+    $page_name = 'Add Experience';
+    return view('admin.addDeals',compact('page_title','page_name'));
+}
+
+
+
 public function genericFIleUpload($file,$dir,$realPath){
     $image_name = $file->getClientOriginalName();
     $file->move(public_path($dir),$image_name);
@@ -3674,6 +3684,28 @@ public function genericFIleUpload($file,$dir,$realPath){
     $image_path = "$url/$dir/" . $image_name;
     return $image_path;
 }
+
+
+
+public function add_Deals(Request $request){
+    $dir = 'uploads/deals';
+    if(isset($request->image_one)){
+        $file = $request->file('image_one');
+        $realPath = $request->file('image_one')->getRealPath();
+        $image_one = $this->genericFIleUpload($file,$dir,$realPath);
+    }else{
+        $image_one = $request->image_cheat;
+    }
+    $Deal = new Deal;
+    $Deal->title = $request->title;
+    $Deal->slung = Str::slug($request->title);
+    $Deal->image = $image_one;
+    $Deal->save();
+
+    Session::flash('message', "You have Added One New Product");
+    return Redirect::back();
+}
+
 
 public function add_Experience(Request $request){
 
@@ -3781,6 +3813,15 @@ public function Experiences(){
     $page_name = 'All Experiences';
     return view('admin.experiences',compact('page_title','Experience','page_name'));
 }
+
+public function deals(){
+    $Deals = Deal::all();
+    $page_title = 'list';
+    $page_name = 'All Experiences';
+    return view('admin.deals',compact('page_title','Deals','page_name'));
+}
+
+
 
 public function editExperience($id){
     $Experience = Experience::find($id);
@@ -3973,6 +4014,23 @@ public function deleteExperience($id){
     DB::table('itineries')->where('product_id',$id)->delete();
     return Redirect::back();
 }
+
+
+
+public function swapDeals($id){
+    $Order = Deal::find($id);
+    if($Order->status == '1'){
+        $newStatus = '0';
+    }else{
+        $newStatus = '1';
+    }
+    $updateDetails = array(
+        'status'=>$newStatus
+    );
+    DB::table('deals')->where('id',$id)->update($updateDetails);
+    return Redirect::back();
+
+ }
 public function swapExperience($id){
     $Order = Experience::find($id);
     if($Order->status == '1'){

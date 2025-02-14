@@ -50,7 +50,14 @@ class HomeController extends Controller
     public function category($slung){
         $Category = DB::table('category')->where('slung',$slung)->first();
         $Experiences = DB::table('experiences')->where('cat',$Category->id)->get();
-        return view('front.category', compact('Experiences'));
+        return view('front.category', compact('Experiences','Category'));
+    }
+
+    public function subcategories ($category,$subcategory){
+        $Category = DB::table('category')->where('slung',$category)->first();
+        $SubCategory = DB::table('sub_categories')->where('slung',$subcategory)->first();
+        $Experiences = DB::table('experiences')->where('cat',$Category->id)->where('sub_cat',$SubCategory->id)->get();
+        return view('front.subcategory', compact('Experiences','Category','SubCategory'));
     }
 
     public function experience($slung){

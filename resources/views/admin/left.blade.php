@@ -7,12 +7,12 @@
                 <div class="media-body">
                     <h5 class="media-heading"><small><b> {{Auth::user()->name}}</b></small> </h5>
                     <ul class="list-unstyled user-info">
-                        
+
                         <li>
                              <a href="{{url('/admin')}}/editAdmin/{{Auth::user()->id}}" class="btn btn-success btn-xs btn-circle" style="width: 10px;height: 12px;"></a> Online
-                           
+
                         </li>
-                       
+
                     </ul>
                 </div>
                 <br />
@@ -20,16 +20,17 @@
 
             <ul id="menu" class="collapse">
 
-                
+
                 <li class="panel active">
                     <a href="{{url('/admin')}}" >
                         <i class="icon-home"></i> Dashboard
-	    
-                       
-                    </a>                   
+
+
+                    </a>
                 </li>
 
                 <li><a href="{{url('admin/addExperience')}}"><i class="icon-plus"></i>  <i class="icon-map-marker"></i> Add Holiday/Experience </a></li>
+                <li><a href="{{url('admin/addDeals')}}"><i class="icon-plus"></i>  <i class="icon-map-marker"></i> Add Deals </a></li>
                 <li><a href="{{url('admin/addSample')}}"><i class="icon-plus"></i>  <i class="icon-map-marker"></i> Add Sample Safaris </a></li>
                 <li><a href="{{url('admin/addExtra')}}"><i class="icon-plus"></i>  <i class="icon-map-marker"></i> Add Extra Info </a></li>
                 {{-- <li><a href="{{url('admin/addCar')}}"><i class="icon-plus"></i>  <i class="icon-truck"></i> Add Car </a></li> --}}
@@ -39,7 +40,7 @@
                 <li class="panel">
                     <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#error-nav">
                         <i class="icon-folder-open"></i>  Add itineraries
-	   
+
                         <span class="pull-right">
                             <i class="icon-angle-left"></i>
                         </span>
@@ -48,8 +49,8 @@
                     <ul class="collapse" id="error-nav">
                         <!-- <li><a href="{{url('/admin/addItinery')}}/Destination"><i class="icon-angle-right"></i> Destination Itineries  </a></li> -->
                         <li><a href="{{url('/admin/addItinery')}}/Experience"><i class="icon-angle-right"></i> Experiences Itineries   </a></li>
-                        
-                        
+
+
                     </ul>
                 </li>
                 {{-- <li><a href="{{url('admin/addHotel')}}"><i class="icon-plus"></i>  <i class="icon-home"></i> Add Hotel </a></li> --}}
@@ -65,7 +66,7 @@
                 <li class="panel">
                     <a href="#error-navv" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#error-navv">
                         <i class="icon-folder-open"></i>  Pages
-	   
+
                         <span class="pull-right">
                             <i class="icon-angle-left"></i>
                         </span>
@@ -77,7 +78,7 @@
                         <li><a href="{{url('/admin/privacy')}}"><i class="icon-angle-right"></i> Privacy  </a></li>
                         <li><a href="{{url('/admin/terms')}}"><i class="icon-angle-right"></i> Terms  </a></li>
                         <li><a href="{{url('/admin/copyright')}}"><i class="icon-angle-right"></i> Copyright  </a></li>
-                        
+
                     </ul>
                 </li>
                 <li><a href="{{url('admin/sitesettings')}}"><i class="icon-cog"></i> Site Settings </a></li>
@@ -98,11 +99,11 @@
                 <li><a href="{{url('admin/gallery')}}"><i class="icon-film"></i> Image Gallery </a></li>
                 <li><a href="{{url('admin/maps')}}"><i class="icon-map-marker"></i> Maps </a></li> -->
 
-               
-                
 
-               
-              
+
+
+
+
 
             </ul>
 

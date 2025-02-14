@@ -348,10 +348,10 @@
                     galleryId: "nature",
                     plugins: [lgZoom, lgThumbnail],
                     mobileSettings: {
-                    controls: false,
-                    showCloseIcon: false,
-                    download: false,
-                    rotate: false
+                        controls: false,
+                        showCloseIcon: false,
+                        download: false,
+                        rotate: false
                     }
                 }
                 );

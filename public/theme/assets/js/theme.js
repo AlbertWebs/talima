@@ -187,7 +187,7 @@
             dots: true,
             arrows: false,
             infinite: true,
-            speed: 800,
+            speed: 2000,
             fade: true,
             cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
             appendDots: sliderDots,
@@ -196,6 +196,7 @@
                 return '<a class="pager__item"> '+title+' </a>';
             },
             autoplay: true,
+            autoplaySpeed: 5000,
             slidesToShow: 1,
             slidesToScroll: 1,
             prevArrow: '<div class="prev"><i class="far fa-arrow-left"></i></div>',

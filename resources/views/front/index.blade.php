@@ -1,74 +1,10 @@
 @extends('front.master')
 
 @section('content')
-  <!--====== Start Banner Section ======-->
-  <section class="banner-section">
-    <div class="hero-wrapper-one p-r z-1">
-        <div class="hero-dots"></div>
-        <div class="hero-slider-one">
-            <!--====== Single Slider ======-->
-            <div class="single-slider p-r z-1" data-title="Camping">
-                <div class="image-layer bg_cover" style="background-image: url('{{asset('theme/assets/images/hero/hero-slider-one.jpg')}}');"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero-content text-white">
-                                <span class="sub-title" data-animation="fadeInDown" data-delay=".4s"><span class="number">01</span>Camping</span>
-                                <h1 data-animation="fadeInUp" data-delay=".6s">Travel &
-                                    Adventure</h1>
-                                <div class="hero-button" data-animation="fadeInDown" data-delay=".8s">
-                                    <a href="about.html" class="main-btn btn-yellow">Discover more<i class="far fa-angle-double-right"></i></a>
-                                    <a href="faq.html" class="main-btn btn-link">How it works<i class="far fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--====== Single Slider ======-->
-            <div class="single-slider p-r z-1" data-title="Adventure">
-                <div class="image-layer bg_cover" style="background-image: url('{{asset('theme/assets/images/hero/hero-slider-two.jpg')}}');"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero-content text-white">
-                                <span class="sub-title" data-animation="fadeInDown" data-delay=".4s"><span class="number">02</span>Camping</span>
-                                <h1 data-animation="fadeInUp" data-delay=".6s">Travel &
-                                    Adventure</h1>
-                                <div class="hero-button" data-animation="fadeInDown" data-delay=".8s">
-                                    <a href="about.html" class="main-btn btn-yellow">Discover more<i class="far fa-angle-double-right"></i></a>
-                                    <a href="faq.html" class="main-btn btn-link">How it works<i class="far fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--====== Single Slider ======-->
-            <div class="single-slider p-r z-1" data-title="Travel">
-                <div class="image-layer bg_cover" style="background-image: url('{{asset('theme/assets/images/hero/hero-slider-three.jpg')}}');"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero-content text-white">
-                                <span class="sub-title" data-animation="fadeInDown" data-delay=".4s"><span class="number">03</span>Camping</span>
-                                <h1 data-animation="fadeInUp" data-delay=".6s">Travel &
-                                    Adventure</h1>
-                                <div class="hero-button" data-animation="fadeInDown" data-delay=".8s">
-                                    <a href="about.html" class="main-btn btn-yellow">Discover more<i class="far fa-angle-double-right"></i></a>
-                                    <a href="faq.html" class="main-btn btn-link">How it works<i class="far fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!--====== End Banner Section ======-->
+@include('front.slider')
 <br>
 <section class="features-bg-section p-r z-1 pt-100 pb-100" style="background-image: url('{{asset('theme/assets/images/bg/ad-bg-1.png')}}');">
-    <div class="features-bg bg_cover wow fadeInRight" style="background-image: url('{{asset('theme/assets/images/bg/features-bg-1.jpg')}}'); border-radius:50px"></div>
+    <div class="features-bg bg_cover wow fadeInRight" style="background-image: url('{{asset('uploads/banners/Zanzibar-Boat-trIP.jpg')}}'); border-radius:50px"></div>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
@@ -94,72 +30,33 @@
     </div>
 </section><!--====== End Features Section ======-->
  <!--====== Start Gallery Section ======-->
-<section class="gallery-section pt-95 pb-50">
+<section class="gallery-section pt-95 pb-50" id="deals">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-lg-3" style="margin: 0 auto; text-align:center">
                 <div class="section-title mb-20">
                     <h2 class="theme-color">Best Deals <br> For You</h2>
                 </div>
-                <a href="#" class="main-btn btn-yellow pulseBtn"> Book Now <i class="far fa-angle-double-right"></i></a>
+                <a href="{{url('/')}}/book-us" class="main-btn btn-yellow pulseBtn"> Book Now <i class="far fa-angle-double-right"></i></a>
             </div>
             <div class="col-lg-9">
                 <div class="gallery-slider-two wow fadeInDown">
+                    <?php
+                      $Deals = DB::table('deals')->where('status','1')->get();
+                    ?>
+                    @foreach ($Deals as $deals)
                     <div class="single-gallery-item-two">
                         <div class="gallery-img">
-                            <img src="{{asset('theme/assets/images/gallery/gl-5.jpg')}}" alt="gallery image">
+                            <img class="deals-img" src="{{$deals->image}}" alt="gallery image">
                             <div class="hover-content">
                                 <div class="inner-content">
-                                    <a href="#" class="cat-btn">Tree House</a>
-                                    <h6>Couple Camping</h6>
+                                    <a href="#" class="cat-btn">{{$deals->title}}</a>
+                                    {{-- <h6>{{$deals->title}}</h6> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="single-gallery-item-two">
-                        <div class="gallery-img">
-                            <img src="{{asset('theme/assets/images/gallery/gl-6.jpg')}}" alt="gallery image">
-                            <div class="hover-content">
-                                <div class="inner-content">
-                                    <a href="#" class="cat-btn">Tree House</a>
-                                    <h6>Couple Camping</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-gallery-item-two">
-                        <div class="gallery-img">
-                            <img src="{{asset('theme/assets/images/gallery/gl-7.jpg')}}" alt="gallery image">
-                            <div class="hover-content">
-                                <div class="inner-content">
-                                    <a href="#" class="cat-btn">Tree House</a>
-                                    <h6>Couple Camping</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-gallery-item-two">
-                        <div class="gallery-img">
-                            <img src="{{asset('theme/assets/images/gallery/gl-8.jpg')}}" alt="gallery image">
-                            <div class="hover-content">
-                                <div class="inner-content">
-                                    <a href="#" class="cat-btn">Tree House</a>
-                                    <h6>Couple Camping</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-gallery-item-two">
-                        <div class="gallery-img">
-                            <img src="{{asset('theme/assets/images/gallery/gl-6.jpg')}}" alt="gallery image">
-                            <div class="hover-content">
-                                <div class="inner-content">
-                                    <a href="#" class="cat-btn">Tree House</a>
-                                    <h6>Couple Camping</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
     </div>
@@ -184,79 +81,36 @@
         </div>
     </div>
 </section><!--====== End Video Section ======-->
+
 <section class="fun-fact mt-minus-180 plr-5p p-r z-2">
     <div class="container-fluid">
         <div class="gallery-slider-one wow fadeInUp">
+            <?php
+              $Experienses = DB::table('experiences')->where('cat','2')->limit('7')->get();
+            ?>
+            @foreach ($Experienses as $experience)
             <div class="gallery-item">
                 <div class="gallery-img border">
-                    <img src="{{asset('theme/assets/images/gallery/gl-1.jpg')}}" alt="Gallery Image">
-                        {{-- <a href="gallery.html" class="icon-btn"><i class="far fa-arrow-right"></i></a> --}}
-                        <div class="ova_foot_product">
-                            <div class="ova-product-day-title-location">
-                               <div class="ova-tour-day">
-                                  <i aria-hidden="true" class="icomoon icomoon-clock"></i>
-                                  5 days
-                               </div>
-                               <p class="ova-product-title">
-                                  <a href="#">5 DAYS GORILLAS &amp; GOLDEN MONKEYS IN RWANDA -2025</a>
-                               </p>
-                               <div class="ova-product-location">
-                                  <i aria-hidden="true" class="icomoon icomoon-location"></i>
-                                  <span class="location">
-                                  Akagera Road, Akagera, Rwanda	            </span>
-                               </div>
+                    <img class="experience-img" src="{{$experience->image_one}}" alt="Gallery Image">
+                    {{-- <a href="gallery.html" class="icon-btn"><i class="far fa-arrow-right"></i></a> --}}
+                    <div class="ova_foot_product">
+                        <div class="ova-product-day-title-location">
+                            <div class="ova-tour-day">
+                                <i aria-hidden="true" class="icomoon icomoon-clock"></i>
+                                {{$experience->duration}}
                             </div>
-                         </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img border">
-                    <img src="{{asset('theme/assets/images/gallery/gl-2.jpg')}}" alt="Gallery Image">
-                    <div class="hover-overlay">
-                        <div class="hover-content text-center text-white">
-                            <a href="gallery.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-                            <h4 class="title"><a href="gallery.html">Tent Camping</a></h4>
-                            <a href="#" class="cat-link">Forest Traveling</a>
+                            <p class="ova-product-title">
+                                <a href="{{route('experience', $experience->slung)}}">{{$experience->title}}</a>
+                            </p>
+                            <div class="ova-product-location">
+                                <i aria-hidden="true" class="icomoon icomoon-location"></i>
+                                <span class="location">{{$experience->location}}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-img border">
-                    <img src="{{asset('theme/assets/images/gallery/gl-3.jpg')}}" alt="Gallery Image">
-                    <div class="hover-overlay">
-                        <div class="hover-content text-center text-white">
-                            <a href="gallery.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-                            <h4 class="title"><a href="gallery.html">Tent Camping</a></h4>
-                            <a href="#" class="cat-link">Forest Traveling</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img border">
-                    <img src="{{asset('theme/assets/images/gallery/gl-4.jpg')}}" alt="Gallery Image">
-                    <div class="hover-overlay">
-                        <div class="hover-content text-center text-white">
-                            <a href="gallery.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-                            <h4 class="title"><a href="gallery.html">Tent Camping</a></h4>
-                            <a href="#" class="cat-link">Forest Traveling</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img border">
-                    <img src="{{asset('theme/assets/images/gallery/gl-3.jpg')}}" alt="Gallery Image">
-                    <div class="hover-overlay">
-                        <div class="hover-content text-center text-white">
-                            <a href="gallery.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-                            <h4 class="title"><a href="gallery.html">Tent Camping</a></h4>
-                            <a href="#" class="cat-link">Forest Traveling</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -302,8 +156,8 @@
             </div>
             <div class="col-lg-6">
                 <div class="adventure-one_image-box p-r z-1 wow fadeInRight">
-                    <img src="{{asset('theme/assets/images/contact/img-1.jpg')}}" class="img-one" alt="Image">
-                    <img src="{{asset('theme/assets/images/contact/img-2.jpg')}}" class="img-two" alt="Image">
+                    <img style="min-height:500px; border-radius:10px;" src="{{asset('uploads/banners/slide_4.jpg')}}" class="img-one" alt="Image">
+                    <img style="width:265px; border-radius:10px;" src="{{asset('uploads/banners/1_450_1_Diani_Beach_in_front_of_The_Sands_at_Nomad.jpg')}}" class="img-two" alt="Image">
                 </div>
             </div>
         </div>
@@ -317,77 +171,34 @@
             <div class="col-xl-7 col-lg-10">
                 <!--====== Section Title ======-->
                 <div class="section-title text-center mb-50 wow fadeInDown">
-                    <span class="sub-title"><span class="number">01</span> Enjoy Adventure</span>
+                    <span class="sub-title"><span class="number">05</span> Enjoy Adventure</span>
                     <h2 class="theme-color">Unbeatable  <span class="thin">Holiday Deals</span></h2>
                 </div>
             </div>
         </div>
+        <?php
+          $Experiences = DB::table('experiences')->limit('4')->inRandomOrder()->get();
+        ?>
         <div class="container-fluids">
             <div class="service-slider-one wow fadeInDown">
+                @foreach ($Experiences as $experience)
                 <div class="single-service-item-four">
                     <div class="img-holder">
-                        <img src="{{asset('theme/assets/images/service/service-16.jpg')}}" alt="Service Image">
+                        <img class="exp-img" src="{{$experience->image_one}}" alt="Service Image">
                         <div class="hover-content">
                             <div class="inner-content d-flex justify-content-between">
                                 <div class="text">
-                                    <h4 class="title"><a href="accommodation-details.html">Tent Camper</a></h4>
-                                    <a href="accommodation-details.html" class="btn-link">check availability<i class="far fa-angle-double-right"></i></a>
+                                    <h4 class="title"><a href="{{route('experience', $experience->slung)}}">{{$experience->title}}</a></h4>
+                                    <a href="{{route('experience', $experience->slung)}}" class="btn-link">Book Now<i class="far fa-angle-double-right"></i></a>
                                 </div>
                                 <div class="icon">
-                                    <a href="accommodation-details.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
+                                    <a href="{{route('experience', $experience->slung)}}" class="icon-btn"><i class="far fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="single-service-item-four">
-                    <div class="img-holder">
-                        <img src="{{asset('theme/assets/images/service/service-17.jpg')}}" alt="Service Image">
-                        <div class="hover-content">
-                            <div class="inner-content d-flex justify-content-between">
-                                <div class="text">
-                                    <h4 class="title"><a href="accommodation-details.html">Tent Camper</a></h4>
-                                    <a href="accommodation-details.html" class="btn-link">check availability<i class="far fa-angle-double-right"></i></a>
-                                </div>
-                                <div class="icon">
-                                    <a href="accommodation-details.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-service-item-four">
-                    <div class="img-holder">
-                        <img src="{{asset('theme/assets/images/service/service-18.jpg')}}" alt="Service Image">
-                        <div class="hover-content">
-                            <div class="inner-content d-flex justify-content-between">
-                                <div class="text">
-                                    <h4 class="title"><a href="accommodation-details.html">Tent Camper</a></h4>
-                                    <a href="accommodation-details.html" class="btn-link">check availability<i class="far fa-angle-double-right"></i></a>
-                                </div>
-                                <div class="icon">
-                                    <a href="accommodation-details.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-service-item-four">
-                    <div class="img-holder">
-                        <img src="{{asset('theme/assets/images/service/service-19.jpg')}}" alt="Service Image">
-                        <div class="hover-content">
-                            <div class="inner-content d-flex justify-content-between">
-                                <div class="text">
-                                    <h4 class="title"><a href="accommodation-details.html">Tent Camper</a></h4>
-                                    <a href="accommodation-details.html" class="btn-link">check availability<i class="far fa-angle-double-right"></i></a>
-                                </div>
-                                <div class="icon">
-                                    <a href="accommodation-details.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -397,7 +208,7 @@
   <section class="choose-bg-section p-r z-1 pt-50">
     <div class="choose-bg bg_cover wow fadeInLeft">
         <div class="fullscreen-bg">
-            <video loop muted autoplay poster="img/videoframe.jpg')}}" class="fullscreen-bg__video">
+            <video loop muted autoplay poster="{{asset('theme/img/videoframe.jpg')}}" class="fullscreen-bg__video">
                 <source src="{{url('/')}}/uploads/videos/2231485-sd_960_540_24fps.mp4" type="video/mp4">
             </video>
         </div>
@@ -407,8 +218,8 @@
             <div class="col-xl-6 col-lg-12">
                 <div class="choose-content-box pl-lg-70 pr-lg-50">
                     <div class="section-title mb-40 wow fadeInDown">
-                        <span class="sub-title"><span class="number">05</span>Why Choose Us</span>
-                        <h2>Traveler Why Choose <span class="thin">Our Tent Camping</span></h2>
+                        <span class="sub-title"><span class="number">06</span>Why Choose Us</span>
+                        <h2> Why Choose <span class="thin">Our Tent Camping</span></h2>
                     </div>
                     <ul>
                         <li class="features-left-icon-box mb-35 wow fadeInUp">
@@ -416,9 +227,8 @@
                                 <i class="flaticon-tent-4"></i>
                             </div>
                             <div class="text">
-                                <h5 class="title">Facilities/Prices</h5>
-                                <p>Undertakes laborious physical exercise except to
-                                    obtain some advantage has any right</p>
+                                <h5 class="title">Tailor-Made Safaris</h5>
+                                <p>Unique, personalized experiences that showcase Africa’s beauty, culture, and wildlife.</p>
                             </div>
                         </li>
                         <li class="features-left-icon-box mb-35 wow fadeInUp">
@@ -426,9 +236,8 @@
                                 <i class="flaticon-sports"></i>
                             </div>
                             <div class="text">
-                                <h5 class="title">Outdoor Sports</h5>
-                                <p>These cases are perfectly simple and distinguish
-                                    power of choice untrammelled nothing</p>
+                                <h5 class="title">Expert Local Guides</h5>
+                                <p>Knowledgeable guides and seamless planning for a stress-free adventure.</p>
                             </div>
                         </li>
                         <li class="features-left-icon-box mb-35 wow fadeInUp">
@@ -436,9 +245,8 @@
                                 <i class="flaticon-tent-4"></i>
                             </div>
                             <div class="text">
-                                <h5 class="title">Well Canoeing</h5>
-                                <p>Quis autem vel eum sure reprehenderit voluptate
-                                    velit esse quam molestiae consequatur</p>
+                                <h5 class="title">Sustainable Travel </h5>
+                                <p>Eco-friendly tours that support conservation and local communities.</p>
                             </div>
                         </li>
                     </ul>
@@ -461,7 +269,7 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="cta-button float-lg-end mb-35 wow fadeInRight">
-                        <a href="about.html" class="main-btn btn-yellow pulseBtn">Contact Us<i class="far fa-angle-double-right"></i></a>
+                        <a href="{{route('contact-us')}}" class="main-btn btn-yellow pulseBtn">Contact Us<i class="far fa-angle-double-right"></i></a>
                     </div>
                 </div>
             </div>

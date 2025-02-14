@@ -11,6 +11,7 @@
                     <h1 class="page-title">{{$Category->cat}}</h1>
                     <ul class="breadcrumb-link text-white">
                         <li><a href="{{url('/')}}">Home</a></li>
+                        <li><a href="{{url('/')}}">{{$SubCategory->title}}</a></li>
                         <li class="active">{{$Category->cat}}</li>
                     </ul>
                 </div>
