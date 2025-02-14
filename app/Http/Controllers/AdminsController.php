@@ -41,7 +41,7 @@ use App\Booking;
 
 use App\CarType;
 
-use App\Duration;
+use App\Models\Duration;
 
 use App\Models\Sample;
 
