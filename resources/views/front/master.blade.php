@@ -7,7 +7,33 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--====== Title ======-->
-        <title>Talima Africa Adventures - Tours and Travel Company in Kenya</title>
+        <!-- Title Tag -->
+        <title>Talima Africa Adventures | Best Kenya Safaris & Tours</title>
+
+        <!-- Meta Description -->
+        <meta name="description" content="Explore Kenya with Talima Africa Adventures! Tailor-made safaris, beach holidays, and cultural tours for international & local tourists. Call 📞 +254 708 284 492.">
+
+        <!-- Meta Keywords -->
+        <meta name="keywords" content="Kenya safaris, African tours, Kenya travel agency, best tours in Kenya, luxury safaris, Kenya wildlife tours, beach holidays in Kenya, cultural tours, eco-tourism Kenya, Talima Africa Adventures">
+
+        <!-- Canonical Tag -->
+        <link rel="canonical" href="{{url('/')}}">
+
+        <!-- Open Graph (OG) Tags for Social Media -->
+        <meta property="og:title" content="Talima Africa Adventures | Unforgettable African Safaris">
+        <meta property="og:description" content="Plan your dream safari, beach holiday, or cultural tour with Talima Africa Adventures. Experience the best of Kenya with expert guides. Call +254 708 284 492.">
+        <meta property="og:image" content="{{url('/')}}/uploads/logo/logo.png">
+        <meta property="og:url" content="{{url('/')}}">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Talima Africa Adventures">
+
+        <!-- Twitter Card Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Plan Your Dream Safari with Talima Africa Adventures">
+        <meta name="twitter:description" content="Explore Kenya with top-rated tours & safaris. Book now!">
+        <meta name="twitter:image" content="{{url('/')}}/uploads/logo/logo.png">
+        <meta name="twitter:site" content="@talimaafrica">
+        {{--  --}}
         <!--====== Favicon Icon ======-->
         <link rel="apple-touch-icon" sizes="180x180" href="{{asset('favicon/apple-touch-icon.png')}}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon/favicon-32x32.png')}}">
