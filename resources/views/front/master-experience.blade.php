@@ -153,7 +153,7 @@
                                         ?>
                                         <ul class="sub-menu">
                                             @foreach ($Subcategory as $SubCat)
-                                            <li><a href="{{route('tour-subcategories', ['category-slung' => $categories->slung, 'subcatgory-slung'=> $SubCat->slung])}}">{{$SubCat->title}}</a></li>
+                                            <li><a href="{{route('tour-subcategories', ['category' => $categories->slung, 'subcatgory'=> $SubCat->slung])}}">{{$SubCat->title}}</a></li>
                                             @endforeach
                                             <hr>
                                             <li><a href="{{route('tour-category', ['slung' => $categories->slung])}}">All {{$categories->cat}}</a></li>

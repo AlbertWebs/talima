@@ -11,33 +11,33 @@
                     <div class="single-service-item-four">
                         <div class="img-holder" id="animated-thumbnails-gallery">
                             <a href="{{$experiences->image_one}}" class="gallery-item" data-src="{{$experiences->image_one}}">
-                               <img src="{{$experiences->image_one}}" alt="Service Image">
+                               <img class="single-img" src="{{$experiences->image_one}}" alt="Service Image">
                             </a>
                         </div>
                     </div>
                     <div class="single-service-item-four">
                         <div class="img-holder">
-                            <img src="{{$experiences->image_two}}" alt="Service Image">
+                            <img class="single-img" src="{{$experiences->image_two}}" alt="Service Image">
                         </div>
                     </div>
                     <div class="single-service-item-four">
                         <div class="img-holder">
-                            <img src="{{$experiences->image_three}}" alt="Service Image">
+                            <img class="single-img" src="{{$experiences->image_three}}" alt="Service Image">
                         </div>
                     </div>
                     <div class="single-service-item-four">
                         <div class="img-holder">
-                            <img src="{{$experiences->image_four}}" alt="Service Image">
+                            <img class="single-img" src="{{$experiences->image_four}}" alt="Service Image">
                         </div>
                     </div>
                     <div class="single-service-item-four">
                         <div class="img-holder">
-                            <img src="{{$experiences->image_five}}" alt="Service Image">
+                            <img class="single-img" src="{{$experiences->image_five}}" alt="Service Image">
                         </div>
                     </div>
                     <div class="single-service-item-four">
                         <div class="img-holder">
-                            <img src="{{$experiences->image_six}}" alt="Service Image">
+                            <img class="single-img" src="{{$experiences->image_six}}" alt="Service Image">
                         </div>
                     </div>
                 </div>

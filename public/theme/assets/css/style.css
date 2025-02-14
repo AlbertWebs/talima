@@ -5396,6 +5396,12 @@ form.contact-form textarea.form_control {
     border-radius:10px;
 }
 
+.single-img{
+    height: 369px;
+    object-fit: cover;
+    border-radius:10px;
+}
+
 @media only screen and (max-width: 967px) {
     .deals-img{
         height: auto;
@@ -5408,5 +5414,10 @@ form.contact-form textarea.form_control {
     .exp-img{
         height: auto;
         object-fit: cover;
+    }
+    .single-img{
+        height: auto;
+        object-fit: cover;
+        border-radius:10px;
     }
 }

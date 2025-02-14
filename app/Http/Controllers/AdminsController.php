@@ -3753,7 +3753,7 @@ public function add_Experience(Request $request){
     }
 
 
-    if(isset($request->image_five)){
+    if(isset($request->image_six)){
         $file = $request->file('image_six');
         $realPath = $request->file('image_six')->getRealPath();
         $image_six = $this->genericFIleUpload($file,$dir,$realPath);
@@ -3832,119 +3832,53 @@ public function editExperience($id){
 
 
 public function edit_Experience(Request $request, $id){
-    $path = 'uploads/experiences';
+    $dir = 'uploads/experiences';
+
     if(isset($request->image_one)){
-
-
-            $file = $request->file('image_one');
-            $filename = str_replace(' ', '', $file->getClientOriginalName());
-            $timestamp = new Datetime();
-            $new_timestamp = $timestamp->format('Y-m-d H:i:s');
-            $image_main_temp = $new_timestamp.'image'.$filename;
-            $image_one = str_replace(' ', '',$image_main_temp);
-            $file->move($path, $image_one);
-
+        $file = $request->file('image_one');
+        $realPath = $request->file('image_one')->getRealPath();
+        $image_one = $this->genericFIleUpload($file,$dir,$realPath);
     }else{
         $image_one = $request->image_one_cheat;
     }
 
     if(isset($request->image_two)){
-        $fileSize = $request->file('image_two')->getClientSize();
-         if($fileSize>=1800000){
-            Session::flash('message_image_two', "File Exceeded the maximum allowed Size");
-            Session::flash('messageError', "An error occured, You may have exceeded the maximum size for an image you uploaded");
-
-         }else{
-
-            $file = $request->file('image_two');
-            $filename = str_replace(' ', '', $file->getClientOriginalName());
-            $timestamp = new Datetime();
-            $new_timestamp = $timestamp->format('Y-m-d H:i:s');
-            $image_main_temp = $new_timestamp.'image'.$filename;
-            $image_two = str_replace(' ', '',$image_main_temp);
-            $file->move($path, $image_two);
-         }
+        $file = $request->file('image_two');
+        $realPath = $request->file('image_two')->getRealPath();
+        $image_two = $this->genericFIleUpload($file,$dir,$realPath);
     }else{
         $image_two = $request->image_two_cheat;
     }
 
-
     if(isset($request->image_three)){
-        $fileSize = $request->file('image_three')->getClientSize();
-        if($fileSize>=1800000){
-           Session::flash('message_image_three', "File Exceeded the maximum allowed Size");
-           Session::flash('messageError', "An error occured, You may have exceeded the maximum size for an image you uploaded");
-
-        }else{
-
-            $file = $request->file('image_three');
-            $filename = str_replace(' ', '', $file->getClientOriginalName());
-            $timestamp = new Datetime();
-            $new_timestamp = $timestamp->format('Y-m-d H:i:s');
-            $image_main_temp = $new_timestamp.'image'.$filename;
-            $image_three = str_replace(' ', '',$image_main_temp);
-            $file->move($path, $image_three);
-        }
+        $file = $request->file('image_three');
+        $realPath = $request->file('image_three')->getRealPath();
+        $image_three = $this->genericFIleUpload($file,$dir,$realPath);
     }else{
         $image_three = $request->image_three_cheat;
     }
 
     if(isset($request->image_four)){
-        $fileSize = $request->file('image_four')->getClientSize();
-        if($fileSize>=1800000){
-           Session::flash('message_image_three', "File Exceeded the maximum allowed Size");
-           Session::flash('messageError', "An error occured, You may have exceeded the maximum size for an image you uploaded");
-
-        }else{
-
-            $file = $request->file('image_four');
-            $filename = str_replace(' ', '', $file->getClientOriginalName());
-            $timestamp = new Datetime();
-            $new_timestamp = $timestamp->format('Y-m-d H:i:s');
-            $image_main_temp = $new_timestamp.'image'.$filename;
-            $image_four = str_replace(' ', '',$image_main_temp);
-            $file->move($path, $image_four);
-        }
+        $file = $request->file('image_four');
+        $realPath = $request->file('image_four')->getRealPath();
+        $image_four = $this->genericFIleUpload($file,$dir,$realPath);
     }else{
         $image_four = $request->image_four_cheat;
     }
 
     if(isset($request->image_five)){
-        $fileSize = $request->file('image_five')->getClientSize();
-        if($fileSize>=1800000){
-           Session::flash('message_image_three', "File Exceeded the maximum allowed Size");
-           Session::flash('messageError', "An error occured, You may have exceeded the maximum size for an image you uploaded");
-
-        }else{
-
-            $file = $request->file('image_five');
-            $filename = str_replace(' ', '', $file->getClientOriginalName());
-            $timestamp = new Datetime();
-            $new_timestamp = $timestamp->format('Y-m-d H:i:s');
-            $image_main_temp = $new_timestamp.'image'.$filename;
-            $image_five = str_replace(' ', '',$image_main_temp);
-            $file->move($path, $image_five);
-        }
+        $file = $request->file('image_five');
+        $realPath = $request->file('image_five')->getRealPath();
+        $image_five = $this->genericFIleUpload($file,$dir,$realPath);
     }else{
         $image_five = $request->image_five_cheat;
     }
 
+
     if(isset($request->image_six)){
-        $fileSize = $request->file('image_six')->getClientSize();
-        if($fileSize>=1800000){
-           Session::flash('message_image_three', "File Exceeded the maximum allowed Size");
-           Session::flash('messageError', "An error occured, You may have exceeded the maximum size for an image you uploaded");
-
-        }else{
-
-            $file = $request->file('image_six');
-            $filename = str_replace(' ', '', $file->getClientOriginalName());
-            $timestamp = new Datetime();
-            $new_timestamp = $timestamp->format('Y-m-d H:i:s');
-            $image_main_temp = $new_timestamp.'image'.$filename;
-            $image_six = str_replace(' ', '',$image_main_temp);
-            $file->move($path, $image_six);
-        }
+        $file = $request->file('image_six');
+        $realPath = $request->file('image_six')->getRealPath();
+        $image_six = $this->genericFIleUpload($file,$dir,$realPath);
     }else{
         $image_six = $request->image_six_cheat;
     }
@@ -3974,12 +3908,8 @@ public function edit_Experience(Request $request, $id){
         'content' => $request->content,
         'price' => $request->price,
         'duration' => $request->duration,
-        'date' => $request->date,
-        'guide' => $request->guide,
         'cat' => $request->cat,
         'meta' => $request->meta,
-        'destination' => $request->town,
-        'country'=>$request->country,
         'image_one' => $image_one,
         'image_two' => $image_two,
         'image_three' => $image_three,

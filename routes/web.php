@@ -10,7 +10,7 @@ Route::get('/photo-credits', [App\Http\Controllers\HomeController::class, 'photo
 Route::get('/contact-us', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact-us');
 Route::get('/book-us', [App\Http\Controllers\HomeController::class, 'book'])->name('book-us');
 Route::get('/tour-category/{slung}', [App\Http\Controllers\HomeController::class, 'category'])->name('tour-category');
-// Route::get('/tour-subcategory/{subcatgory-slung}', [App\Http\Controllers\HomeController::class, 'subcategory'])->name('tour-subcategory');
+Route::get('/tour-subcategory/{subcatgory-slung}', [App\Http\Controllers\HomeController::class, 'subcategory'])->name('tour-subcategory');
 Route::get('/tour-category/{category}/{subcatgory}', [App\Http\Controllers\HomeController::class, 'subcategories'])->name('tour-subcategories');
 Route::get('/tour/{slung}', [App\Http\Controllers\HomeController::class, 'experience'])->name('experience');
 
