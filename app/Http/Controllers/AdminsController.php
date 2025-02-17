@@ -3908,6 +3908,7 @@ public function edit_Experience(Request $request, $id){
         'content' => $request->content,
         'price' => $request->price,
         'duration' => $request->duration,
+        'sub_cat' => $request->sub_cat,
         'cat' => $request->cat,
         'meta' => $request->meta,
         'image_one' => $image_one,
