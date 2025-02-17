@@ -85,7 +85,7 @@
                                 <div class="left">
                                     <div class="call">
                                         <i class="far fa-envelope"></i>
-                                        <a href="#">info@talimaadventures.com</a>
+                                        <a href="#">info@talimaafrica.com</a>
                                     </div>
                                     <div class="call">
                                         <i class="far fa-phone"></i>
@@ -263,7 +263,7 @@
                                 </div>
                                 <div class="contact-info-box mb-35">
                                     <h4 class="title">Contact</h4>
-                                    <p><i class="far fa-envelope"></i><a href="mailto:info@talimaadventures.com">info@talimaadventures.com</a></p>
+                                    <p><i class="far fa-envelope"></i><a href="mailto:info@talimaafrica.com">info@talimaafrica.com</a></p>
                                     <p><i class="far fa-phone"></i><a href="tel:+254 708 284 492">(+254) 708 284 492</a></p>
                                 </div>
                             </div>
