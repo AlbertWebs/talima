@@ -117,7 +117,7 @@
 
                         <div class="col-lg-8">
                             <select name="sub_cat" data-placeholder="Select Guide" class="form-control chzn-select" tabindex="2">
-                            <option selected value="{{$Experience->sub_cat}}"><?php $Guide = DB::table('sub_categories')->where('id',$Experience->sub_cat)->get();   ?>@foreach($Guide as $guide) {{$guide->cat}} @endforeach</option>
+                            <option selected value="{{$Experience->sub_cat}}"><?php $Guide = DB::table('sub_categories')->where('id',$Experience->sub_cat)->get();   ?>@foreach($Guide as $guide) {{$guide->title}} @endforeach</option>
                             <?php $TheCategoryList = DB::table('sub_categories')->get(); ?>
                             @foreach($TheCategoryList as $value)
                                 <option value="{{$value->id}}">{{$value->title}}</option>
