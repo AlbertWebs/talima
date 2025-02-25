@@ -6,8 +6,38 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        @foreach ($Experiences as $experience)
         <!--====== Title ======-->
-        <title>Talima Africa Adventures - Tours and Travel Company in Kenya</title>
+        <title>{{$experience->title}} - Talima Africa Adventures </title>
+
+
+        {{--  --}}
+        <!-- Meta Description -->
+        <meta name="description" content="{{$experience->meta}}">
+
+        <!-- Meta Keywords -->
+        <meta name="keywords" content="Kenya safaris, African tours, Kenya travel agency, best tours in Kenya, luxury safaris, Kenya wildlife tours, beach holidays in Kenya, cultural tours, eco-tourism Kenya, Talima Africa Adventures">
+
+        <!-- Canonical Tag -->
+        <link rel="canonical" href="{{url('/')}}">
+
+        <!-- Open Graph (OG) Tags for Social Media -->
+        <meta property="og:title" content="{{$experience->title}} - Talima Africa Adventures">
+        <meta property="og:description" content="{{$experience->meta}}">
+        <meta property="og:image" content="{{$experiences->image_one}}">
+        <meta property="og:url" content="{{url('/')}}">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Talima Africa Adventures">
+
+        <!-- Twitter Card Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{$experience->title}} - Talima Africa Adventures">
+        <meta name="twitter:description" content="{{$experience->meta}}">
+        <meta name="twitter:image" content="{{$experiences->image_one}}">
+        <meta name="twitter:site" content="@talimaafrica">
+        {{--  --}}
+        @endforeach
+
         <!--====== Favicon Icon ======-->
         <link rel="apple-touch-icon" sizes="180x180" href="{{asset('favicon/apple-touch-icon.png')}}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon/favicon-32x32.png')}}">
