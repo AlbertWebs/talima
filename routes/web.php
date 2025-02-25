@@ -196,6 +196,10 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('/swapBeach/{id}', [App\Http\Controllers\AdminsController::class, 'swapBeach']);
     Route::get('/addDeals', [App\Http\Controllers\AdminsController::class, 'addDeals']);
     Route::post('/add_Deals', [App\Http\Controllers\AdminsController::class, 'add_Deals']);
+    Route::get('/editDeals/{id}', [App\Http\Controllers\AdminsController::class, 'editDeals']);
+    Route::post('/edit_Deals/{id}', [App\Http\Controllers\AdminsController::class, 'edit_Deals']);
+
+
 
     Route::get('/deals', [App\Http\Controllers\AdminsController::class, 'deals']);
 

@@ -3676,6 +3676,33 @@ public function addDeals(){
     return view('admin.addDeals',compact('page_title','page_name'));
 }
 
+public function editDeals($id){
+    $page_title = 'formfiletext';//For Layout Inheritance
+    $page_name = 'Add Deals';
+    $Deal = Deal::find($id);
+    return view('admin.editDeals',compact('page_title','page_name','Deal'));
+    // return view('admin.editDeals',compact('page_title','page_name'));
+}
+
+//edit_Deals
+public function edit_Deals(Request $request, $id){
+    $path = 'uploads/deals';
+    if(isset($request->image_one)){
+        $file = $request->file('image_one');
+        $realPath = $request->file('image_one')->getRealPath();
+        $image_one = $this->genericFIleUpload($file,$path,$realPath);
+    }else{
+        $image_one = $request->image_cheat;
+    }
+    $updateDetails = array(
+        'title' => $request->title,
+        'image' => $image_one,
+    );
+    DB::table('deals')->where('id',$id)->update($updateDetails);
+    Session::flash('message', "Changes have been saved");
+    return Redirect::back();
+}
+
 
 
 public function genericFIleUpload($file,$dir,$realPath){
