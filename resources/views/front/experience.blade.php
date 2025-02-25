@@ -61,46 +61,65 @@
                             <div class="section-title mb-40">
                                 <h2>Make Your <span class="thin">Booking</span></h2>
                             </div>
-                            <form class="accommodation-form-three">
+                            <form class="accommodation-form-three" mathod="POST" action="{{route('booking')}}">
+                                @csrf
                                 <div class="row">
-                                    <div class="col-lg-6">
+
+                                    <div class="col-lg-12">
                                         <div class="form_group">
                                             <div class="form_group">
-                                                <label><i class="far fa-calendar-alt"></i></label>
-                                                <input type="text" class="form_control datepicker" placeholder="Check In">
+                                                <label><i class="far fa-edit"></i></label>
+                                                <input name="name" type="text" class="form_control" placeholder="Full Name">
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <label><i class="far fa-calendar-alt"></i></label>
-                                            <input type="text" class="form_control datepicker" placeholder="Check Out">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <label><i class="far fa-user"></i></label>
-                                            <input type="text" class="form_control" placeholder="Guest">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form_group">
-                                            <select class="wide">
-                                                <option data-display="Accommodations">Accommodations</option>
-                                                <option value="01">Classic Tent</option>
-                                                <option value="01">Forest Camping</option>
-                                                <option value="01">Small Trailer</option>
-                                                <option value="01">Tree House Tent</option>
-                                                <option value="01">Tent Camping</option>
-                                                <option value="01">Couple Tent</option>
-                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form_group">
-                                            <button class="main-btn btn-green">Check availability <i class="far fa-angle-double-right"></i></button>
+                                            <div class="form_group">
+                                                <label><i class="far fa-envelope"></i></label>
+                                                <input name="email" type="email" class="form_control" placeholder="Email Address">
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <div class="form_group">
+                                                <label><i class="far fa-mobile"></i></label>
+                                                <input name="date" type="text" class="form_control" placeholder="Phone">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <div class="form_group">
+                                                <label><i class="far fa-calendar-alt"></i></label>
+                                                <input name="date" type="text" class="form_control datepicker" placeholder="Date">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <input type="hidden" name="experience" value="{{$experiences->title}}">
+
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <label><i class="far fa-user"></i></label>
+                                            <input name="guest" type="text" class="form_control" placeholder="Guest">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <textarea style="min-height:150px; background-color:#ffffff; padding:10px; border-radius:10px" name="message" row="5" class="form_control" placeholder="Write Message" name="message"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="form_group">
+                                            <button type="submit" class="main-btn btn-green">Submit Request <i class="far fa-angle-double-right"></i></button>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </form>
                         </div>

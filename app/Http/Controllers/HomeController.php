@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\SendEmail;
 
 class HomeController extends Controller
 {
@@ -63,6 +64,25 @@ class HomeController extends Controller
     public function experience($slung){
         $Experiences = DB::table('experiences')->where('slung',$slung)->get();
         return view('front.experience', compact('Experiences'));
+    }
+
+    public function booking(Request $request){
+        $name = $request->name;
+        $email = $request->email;
+        $mobile = $request->mobile;
+        $date = $request->date;
+        $guests = $request->guests;
+        $message = $request->message;
+        $subject = "Booking Request";
+        $to = "info@talimaafrica.com";
+
+        $MailMessage = "Hello Talima, A client called $name. Mobile $mobile, Email $email, wants to book an experience: $request->experience on $date for $guests guests. Message: $message";
+        //Send Email
+        SendEmail::SendMessage($to,$MailMessage,$name, $email,$subject);
+        if(SendEmail::SendMessage($to,$MailMessage,$name, $email,$subject)){
+           echo "<script>alert('Your booking request has been sent. We will get back to you shortly')</script>";
+        }
+        return back()->with('success','Your booking request has been sent. We will get back to you shortly');
     }
 
 
