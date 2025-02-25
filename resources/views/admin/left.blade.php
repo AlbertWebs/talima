@@ -1,7 +1,11 @@
 <div id="left" >
             <div class="media user-media well-small">
                 <a class="user-link" href="{{url('/admin')}}/editAdmin/{{Auth::user()->id}}">
-                    <img width="64" height="64" class="media-object img-thumbnail user-img" alt="{{Auth::user()->name}}" src="{{url('/')}}/uploads/admins/{{Auth::user()->image}}" />
+                    <?php $SiteSettings = DB::table('sitesettings')->get(); ?>
+                       @foreach($SiteSettings as $Settings)
+
+                        <img width="64" height="64" class="media-object img-thumbnail user-img" alt="{{Auth::user()->name}}" src="{{url('/')}}/uploads/logo/{{$Settings->favicon}}" />
+                        @endforeach
                 </a>
                 <br />
                 <div class="media-body">
