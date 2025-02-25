@@ -58,7 +58,7 @@
                 {{-- <li><a href="{{url('admin/addEvent')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Event </a></li> --}}
                 {{-- <li><a href="{{url('admin/addService')}}"><i class="icon-plus"></i>  <i class="icon-cog"></i> Add Services </a></li> --}}
                 <li><a href="{{url('admin/addCategory')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Category </a></li>
-                <li><a href="{{url('admin/addCategory')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Category </a></li>
+                {{-- <li><a href="{{url('admin/addCategory')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Category </a></li> --}}
                 <li><a href="{{url('admin/addSubCategory')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add add Sub Category </a></li>
 
                 {{-- <li><a href="{{url('admin/addBlog')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Blog/News </a></li> --}}
