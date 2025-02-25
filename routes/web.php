@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/post-booking', [App\Http\Controllers\HomeController::class, 'booking'])->name('booking');
+Route::post('/post-booking', [App\Http\Controllers\HomeController::class, 'booking'])->name('booking');
+Route::post('/contact-post', [App\Http\Controllers\HomeController::class, 'contact_store'])->name('contact.store');
+
 
 
 Route::get('/terms-and-conditions', [App\Http\Controllers\HomeController::class, 'terms'])->name('terms-and-conditions');

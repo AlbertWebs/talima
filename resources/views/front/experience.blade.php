@@ -61,6 +61,16 @@
                             <div class="section-title mb-40">
                                 <h2>Make Your <span class="thin">Booking</span></h2>
                             </div>
+                             {{-- <p> Create Blog Posts </p> --}}
+                            <center>
+                                @if(Session::has('message'))
+                                            <div class="alert alert-success">{{ Session::get('message') }}</div>
+                            @endif
+
+                            @if(Session::has('messageError'))
+                                            <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
+                            @endif
+                            </center>
                             <form class="accommodation-form-three" mathod="POST" action="{{route('booking')}}">
                                 @csrf
                                 <div class="row">

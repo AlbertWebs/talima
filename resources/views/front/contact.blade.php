@@ -71,20 +71,29 @@
             <div class="col-xl-5 col-lg-12">
                 <div class="contact-form-wrapper mb-50">
                     <h3 class="title">Send Us Message</h3>
-                    <p>Adipiscing magna varius imperdiet scelerisque
-                        suspendisse amet sed ridiculus turpis.</p>
-                    <form class="contact-form">
+                    <p></p>
+                        <center>
+                            @if(Session::has('message'))
+                                        <div class="alert alert-success">{{ Session::get('message') }}</div>
+                        @endif
+
+                        @if(Session::has('messageError'))
+                                        <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
+                        @endif
+                        </center>
+                    <form class="contact-form" method="POST" action="{{ route('contact.store') }}">
+                        @csrf
                         <div class="form_group">
-                            <input type="text" class="form_control" placeholder="Full Name" name="name" required>
+                            <input type="text" name="name" class="form_control" placeholder="Full Name" name="name" required>
                         </div>
                         <div class="form_group">
-                            <input type="text" class="form_control" placeholder="Email Address" name="email" required>
+                            <input type="text" name="email" class="form_control" placeholder="Email Address" name="email" required>
                         </div>
                         <div class="form_group">
-                            <textarea class="form_control" placeholder="Write Message" name="message"></textarea>
+                            <textarea class="form_control" name="message" placeholder="Write Message" name="message"></textarea>
                         </div>
                         <div class="form_group">
-                            <button class="main-btn btn-green">Send message <i class="far fa-angle-double-right"></i></button>
+                            <button class="main-btn btn-green" type="submit">Send message <i class="far fa-angle-double-right"></i></button>
                         </div>
                     </form>
                 </div>

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\SendEmail;
+use Session;
+use Storage;
+use Redirect;
 
 class HomeController extends Controller
 {
@@ -66,6 +69,19 @@ class HomeController extends Controller
         return view('front.experience', compact('Experiences'));
     }
 
+    public function contact_store(Request $request){
+        $name = $request->name;
+        $email = $request->email;
+        $message = $request->message;
+        $subject = "Contact Request";
+        $to = "info@talimaafrica.com";
+        $MailMessage = "Hello Talima, A client called $name. Email $email, wants to contact you. Message: $message";
+        //Send Email
+        SendEmail::SendMessage($to,$MailMessage,$name, $email,$subject);
+        Session::flash('message', "Your message has been sent. We will get back to you shortly");
+        return Redirect::back();
+    }
+
     public function booking(Request $request){
         $name = $request->name;
         $email = $request->email;
@@ -79,10 +95,9 @@ class HomeController extends Controller
         $MailMessage = "Hello Talima, A client called $name. Mobile $mobile, Email $email, wants to book an experience: $request->experience on $date for $guests guests. Message: $message";
         //Send Email
         SendEmail::SendMessage($to,$MailMessage,$name, $email,$subject);
-        if(SendEmail::SendMessage($to,$MailMessage,$name, $email,$subject)){
-           echo "<script>alert('Your booking request has been sent. We will get back to you shortly')</script>";
-        }
-        return back()->with('success','Your booking request has been sent. We will get back to you shortly');
+
+        Session::flash('message', "Your booking request has been sent. We will get back to you shortly");
+        return Redirect::back();
     }
 
 
