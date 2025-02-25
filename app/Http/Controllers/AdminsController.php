@@ -76,7 +76,7 @@ use App\Message;
 
 use App\ReplyMessage;
 
-use App\Category;
+use App\Models\Category;
 
 use App\Models\SubCategory;
 
@@ -1164,7 +1164,8 @@ public function addCategory(){
 public function add_Category(Request $request){
 
     $Category = new Category;
-    $Category->cat = $request->name;
+    $Category->name = $request->name;
+    $Category->status = 1;
 
     $Category->save();
     Session::flash('message', "Category Has Been Added");
@@ -1179,22 +1180,22 @@ public function editCategories($id){
 }
 
 public function edit_Category(Request $request, $id){
-    $path = 'uploads/categories';
-        if(isset($request->image)){
-            $file = $request->file('image');
-            $filename = $file->getClientOriginalName();
-            $file->move($path, $filename);
-            $image = $filename;
-        }else{
-            $image = $request->image_cheat;
-        }
+    // $path = 'uploads/categories';
+    //     if(isset($request->image)){
+    //         $file = $request->file('image');
+    //         $filename = $file->getClientOriginalName();
+    //         $file->move($path, $filename);
+    //         $image = $filename;
+    //     }else{
+    //         $image = $request->image_cheat;
+    //     }
     $updateDetails = array(
-        'cat'=>$request->name,
+        'name'=>$request->name,
         // 'description'=>$request->content,
-        'image'=>$image
+        // 'image'=>$image
 
     );
-    DB::table('category')->where('id',$id)->update($updateDetails);
+    DB::table('categories')->where('id',$id)->update($updateDetails);
     Session::flash('message', "Changes have been saved");
     return Redirect::back();
 }

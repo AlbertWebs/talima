@@ -54,30 +54,15 @@
 
 
 
-                            <a class="quick-btn" href="{{url('/admin/allMessages')}}">
-                                <i class="icon-envelope icon-2x"></i>
-                                <span>Messages</span>
-                                <span class="label label-success"><?php $Messages = DB::table('messages')->get(); $Count = count($Messages); echo $Count ?></span>
-                            </a>
 
 
-                            <a class="quick-btn" href="{{url('/admin/checkSessions')}}">
-                                <i class="icon-time icon-2x"></i>
-                                <span>Sessions</span>
-                                <span class="label label-danger"></span>
-                            </a>
-
-                            <a class="quick-btn" href="{{url('/admin/bookings')}}">
+                            <a class="quick-btn" href="{{url('/admin/experiences')}}">
                                 <i class="icon-check icon-2x"></i>
-                                <span>Bookings</span>
-                                <span class="label label-info"><?php $Admins = DB::table('bookings')->get(); $Count = count($Admins); echo $Count ?></span>
+                                <span>Experiences</span>
+                                <span class="label label-info"><?php $Admins = DB::table('experiences')->get(); $Count = count($Admins); echo $Count ?></span>
                             </a>
 
-                            <a class="quick-btn" href="{{url('/admin/hotels')}}">
-                                <i class="icon-home icon-2x"></i>
-                                <span>Hotel</span>
-                                <span class="label label-success"><?php $Admins = DB::table('hotels')->get(); $Count = count($Admins); echo $Count ?></span>
-                            </a>
+
 
 
 

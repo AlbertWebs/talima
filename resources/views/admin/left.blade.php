@@ -31,13 +31,13 @@
 
                 <li><a href="{{url('admin/addExperience')}}"><i class="icon-plus"></i>  <i class="icon-map-marker"></i> Add Holiday/Experience </a></li>
                 <li><a href="{{url('admin/addDeals')}}"><i class="icon-plus"></i>  <i class="icon-map-marker"></i> Add Deals </a></li>
-                <li><a href="{{url('admin/addSample')}}"><i class="icon-plus"></i>  <i class="icon-map-marker"></i> Add Sample Safaris </a></li>
-                <li><a href="{{url('admin/addExtra')}}"><i class="icon-plus"></i>  <i class="icon-map-marker"></i> Add Extra Info </a></li>
+                {{-- <li><a href="{{url('admin/addSample')}}"><i class="icon-plus"></i>  <i class="icon-map-marker"></i> Add Sample Safaris </a></li> --}}
+                {{-- <li><a href="{{url('admin/addExtra')}}"><i class="icon-plus"></i>  <i class="icon-map-marker"></i> Add Extra Info </a></li> --}}
                 {{-- <li><a href="{{url('admin/addCar')}}"><i class="icon-plus"></i>  <i class="icon-truck"></i> Add Car </a></li> --}}
                 {{-- <li><a href="{{url('admin/addTransfer')}}"><i class="icon-plus"></i>  <i class="icon-truck"></i> Add Transfers </a></li> --}}
                 <!-- <li><a href="{{url('admin/addCarType')}}"><i class="icon-plus"></i>  <i class="icon-truck"></i> Add Car Types </a></li> -->
                 <!-- <li><a href="{{url('admin/addItinery')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Itineries </a></li> -->
-                <li class="panel">
+                {{-- <li class="panel">
                     <a href="#" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#error-nav">
                         <i class="icon-folder-open"></i>  Add itineraries
 
@@ -52,18 +52,21 @@
 
 
                     </ul>
-                </li>
+                </li> --}}
                 {{-- <li><a href="{{url('admin/addHotel')}}"><i class="icon-plus"></i>  <i class="icon-home"></i> Add Hotel </a></li> --}}
                 {{-- <li><a href="{{url('admin/addRoom')}}"><i class="icon-plus"></i>  <i class="icon-home"></i> Add Room </a></li> --}}
                 {{-- <li><a href="{{url('admin/addEvent')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Event </a></li> --}}
                 {{-- <li><a href="{{url('admin/addService')}}"><i class="icon-plus"></i>  <i class="icon-cog"></i> Add Services </a></li> --}}
                 <li><a href="{{url('admin/addCategory')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Category </a></li>
-                <li><a href="{{url('admin/addBlog')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Blog/News </a></li>
+                <li><a href="{{url('admin/addCategory')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Category </a></li>
+                <li><a href="{{url('admin/addSubCategory')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add add Sub Category </a></li>
+
+                {{-- <li><a href="{{url('admin/addBlog')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Blog/News </a></li> --}}
                 {{-- <li><a href="{{url('admin/addGallery')}}"><i class="icon-plus"></i>  <i class="icon-video"></i> Add Gallery </a></li> --}}
-                <li><a href="{{url('admin/addTestimonial')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Testimonial </a></li>
-                <li><a href="{{url('admin/addAdmin')}}"><i class="icon-plus"></i>  <i class="icon-user-md"></i> Add Admin </a></li>
+                {{-- <li><a href="{{url('admin/addTestimonial')}}"><i class="icon-plus"></i>  <i class="icon-check"></i> Add Testimonial </a></li> --}}
+                {{-- <li><a href="{{url('admin/addAdmin')}}"><i class="icon-plus"></i>  <i class="icon-user-md"></i> Add Admin </a></li> --}}
                 {{-- <li><a href="{{url('admin/addGuide')}}"><i class="icon-plus"></i>  <i class="icon-user-md"></i> Add Guide </a></li> --}}
-                <li class="panel">
+                {{-- <li class="panel">
                     <a href="#error-navv" data-parent="#menu" data-toggle="collapse" class="accordion-toggle" data-target="#error-navv">
                         <i class="icon-folder-open"></i>  Pages
 
@@ -80,9 +83,19 @@
                         <li><a href="{{url('/admin/copyright')}}"><i class="icon-angle-right"></i> Copyright  </a></li>
 
                     </ul>
-                </li>
+                </li> --}}
                 <li><a href="{{url('admin/sitesettings')}}"><i class="icon-cog"></i> Site Settings </a></li>
-                <li><a href="{{url('admin/logout')}}"><i class="icon-signin"></i> Log Out </a></li>
+                <li><a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();"><i class="icon-signin"></i> Log Out </a></li>
+
+
+
+
+
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                 @csrf
+             </form>
                  <!-- <center><h5>Inactive Features</h5></center>
 
                 <li><a href="{{url('admin/addDaily')}}"><i class="icon-plus"></i>  <i class="icon-quote-left"> </i <i class="icon-quote-right"></i>  Add Daily Quote </a></li>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="wrap" >
-        
+
 
         <!-- HEADER SECTION -->
         @include('admin.top')
@@ -18,13 +18,13 @@
 
         <!--PAGE CONTENT -->
         <div id="content">
-             
+
             <div class="inner" style="min-height: 700px;">
                 <div class="row">
                     <div class="col-lg-12">
-                        
+
                         <center><h2> Edit Category </h2></center>
-                        
+
                     </div>
                 </div>
                   <hr />
@@ -39,13 +39,13 @@
                   <!--END BLOCK SECTION -->
                 <hr />
                    <!-- CHART & CHAT  SECTION -->
-              
+
                  <!--END CHAT & CHAT SECTION -->
-               
+
                   <!-- Inner Content Here -->
-                 
+
             <div class="inner">
-                
+
 
               <div class="row">
                <center>
@@ -57,19 +57,19 @@
 							   <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
 				@endif
                  </center>
-                 
+
 
                  <form class="form-horizontal" method="post"  action="{{url('/admin/edit_Category')}}/{{$Category->id}}" enctype="multipart/form-data">
-                    
+
                  <div class="form-group">
                         <label for="text1" class="control-label col-lg-4">Cateory Name</label>
 
                         <div class="col-lg-8">
-                            <input type="text" id="text1" name="name" value="{{$Category->cat}}" placeholder="e.g Get Started " class="form-control" />
+                            <input type="text" id="text1" name="name" value="{{$Category->name}}" placeholder="e.g Get Started " class="form-control" />
                         </div>
                     </div>
 
-           <div class="col-lg-12">
+                    {{-- <div class="col-lg-12">
                             <div class="box">
                                 <header>
                                     <div class="icons"><i class="icon-th-large"></i></div>
@@ -90,15 +90,15 @@
                                     </ul>
                                 </header>
                                 <div id="div-1" class="body collapse in">
-                                    
+
                                         <textarea name="content" id="wysihtml5" class="form-control" rows="10">{{$Category->description}}</textarea>
 
-                                    
+
                                 </div>
                             </div>
-                        </div>
-                   
-                   <center>
+                    </div> --}}
+
+                   {{-- <center>
                     <div class="form-group col-lg-12">
                         <label class="control-label">Image(Width=870 height=200)</label>
                         <div class="">
@@ -112,17 +112,17 @@
                             </div>
                         </div>
                     </div>
-                    </center>
-                   
-                   
+                    </center> --}}
+
+
                     <br><br>
                     <div class="col-lg-12 text-center">
                       <button type="submit" class="btn btn-success"><i class="icon-check icon-white"></i> Save </button>
                     </div>
-                    
+
                     <input type="hidden" name="image_cheat" value="{{$Category->image}}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    
+
                 <form>
               </div>
 
@@ -131,7 +131,7 @@
 
 
 
-                
+
             </div>
 
         </div>
