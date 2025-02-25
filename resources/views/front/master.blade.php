@@ -77,6 +77,7 @@
             })();
         </script>
         <!--End of Tawk.to Script-->
+        <link src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     </head>
     <body>
         <div style="z-index:100000;" id="WAButton"></div>
@@ -125,10 +126,13 @@
                                     <div class="social-header">
                                         <span>Follow Us On:</span>
                                         <ul>
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+                                            <li><a href="https://www.facebook.com/share/15iNsi2vTx/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://www.tiktok.com/@talima.africa.adv?_t=ZM-8uCvLV9eYMh&_r=1"><i class="fab fa-tiktok"></i></a></li>
+
+
+                                            <li><a href="https://api.whatsapp.com/send?text=Hello&phone=+254708284492"><i class="fab fa-whatsapp"></i></a></li>
+                                            <li><a href="https://www.instagram.com/talimaafrica/"><i class="fab fa-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -243,10 +247,10 @@
                                 <a href="{{url('/')}}" class="footer-logo"><img src="{{asset('uploads/logo/logo-white.png')}}" alt="Brand Logo"></a>
                                 <p>"Your gateway to safaris, hiking, hotel bookings, airport transfers, and more. Travel made easy!"</p>
                                 <ul class="social-link">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.facebook.com/share/15iNsi2vTx/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+                                    <li><a href="https://www.instagram.com/talimaafrica/"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://api.whatsapp.com/send?text=Hello&phone=+254708284492"><i class="fab fa-whatsapp"></i></a></li>
                                 </ul>
                             </div>
                         </div>

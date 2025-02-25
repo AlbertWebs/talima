@@ -56,6 +56,12 @@
                                 <div class="text">
                                     <h4 class="title">Follow Us</h4>
                                     <p>4th Flr-Gateway Mall, Nairobi, Kenya</p>
+                                    <ul class="social-link">
+                                        <li><a href="https://www.facebook.com/share/15iNsi2vTx/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+                                        <li><a href="https://www.instagram.com/talimaafrica/"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://api.whatsapp.com/send?text=Hello&phone=+254708284492"><i class="fab fa-whatsapp"></i></a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +90,12 @@
                 </div>
             </div>
         </div>
+        {{--  --}}
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16314137.73658627!2d35.6234344!3d-3.3639162500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x69aee3c4aca2f141%3A0x65e808d78c966593!2sTalima%20Africa%20Adventures!5e0!3m2!1ssw!2ske!4v1740479216473!5m2!1ssw!2ske" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        {{--  --}}
     </div>
 </section><!--====== End Contact Section ======-->
+
+
 
 @endsection
