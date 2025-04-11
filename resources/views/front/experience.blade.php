@@ -71,7 +71,7 @@
                                             <div class="alert alert-danger">{{ Session::get('messageError') }}</div>
                             @endif
                             </center>
-                            <form class="accommodation-form-three" mathod="POST" action="{{route('booking')}}">
+                            <form class="accommodation-form-three" method="POST" action="{{route('booking')}}">
                                 @csrf
                                 <div class="row">
 
