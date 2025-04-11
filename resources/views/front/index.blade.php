@@ -18,7 +18,7 @@
                     </p>
                     <div class="counting-box mt-40">
                         <div class="title">
-                            <h5>Saticfied Clients <span>89%</span></h5>
+                            <h5>Satisfied Clients <span>89%</span></h5>
                             <div class="progress">
                                 <div class="progress-bar wow slideInLeft" style="width: 89%"></div>
                             </div>

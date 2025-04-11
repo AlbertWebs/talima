@@ -31,8 +31,8 @@
                                 </div>
                                 <div class="text">
                                     <h4 class="title">Email Us</h4>
-                                    <p><a href="mailto:info@talimaadventures.com">info@talimaadventures.com</a></p>
-                                    <p><a href="mailto:booking@talimaadventures.com">booking@talimaadventures.com</a></p>
+                                    <p><a href="mailto:info@talimaafrica.com">info@talimaafrica.com</a></p>
+                                    <p><a href="mailto:booking@talimaafrica.com">booking@talimaafrica.com</a></p>
                                 </div>
                             </div>
                         </div>

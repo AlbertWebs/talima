@@ -12,16 +12,16 @@
                             <a href="{{url('/admin')}}" class="navbar-brand">
 
                                 <img width="60" src="{{url('/')}}/uploads/logo/{{$Settings->logo}}" alt="{{ config('app.name', 'Laravel') }}" />
-                                    
+
                             </a>
                         @endforeach
-                    
+
                 </header>
                 <!-- END LOGO SECTION -->
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
                         <a title="Preview Website" target="new" href="{{url('/')}}">
-                            <span class="label label-danger"></span>    <i class="icon-globe"></i>&nbsp; 
+                            <span class="label label-danger"></span>    <i class="icon-globe"></i>&nbsp;
                         </a>
                     </li>
                     <!-- MESSAGES SECTION -->
@@ -42,14 +42,14 @@
                                     </div>
                                     <div>{{$Message->content}}
                                         <br />
-                                        <span class="label label-primary">Important</span> 
+                                        <span class="label label-primary">Important</span>
 
                                     </div>
                                 </a>
                             </li>
                             <li class="divider"></li>
                         @endforeach
-                           
+
                             <li>
                                 <a class="text-center" href="{{url('/admin/allMessages')}}">
                                     <strong>Read All Messages</strong>
@@ -61,7 +61,7 @@
                     </li>
                     <!--END MESSAGES SECTION -->
 
-                                   
+
 
                     <!--ADMIN SETTINGS SECTIONS -->
 
